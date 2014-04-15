@@ -1,0 +1,594 @@
+!SESSION 2014-04-15 18:07:04.385 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_33
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.php.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.php.product
+
+!ENTRY org.eclipse.ui.intro 4 0 2014-04-15 18:07:08.740
+!MESSAGE C:\Eclipse1\intro\sample.xml (The system cannot find the path specified)
+!STACK 0
+java.io.FileNotFoundException: C:\Eclipse1\intro\sample.xml (The system cannot find the path specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at javax.xml.parsers.DocumentBuilder.parse(Unknown Source)
+	at org.eclipse.ui.internal.intro.impl.model.loader.IntroContentParser.parse(IntroContentParser.java:94)
+	at org.eclipse.ui.internal.intro.impl.model.loader.IntroContentParser.<init>(IntroContentParser.java:56)
+	at org.eclipse.ui.internal.intro.impl.model.IntroModelRoot.loadDOM(IntroModelRoot.java:885)
+	at org.eclipse.ui.internal.intro.impl.model.IntroModelRoot.processConfigExtension(IntroModelRoot.java:411)
+	at org.eclipse.ui.internal.intro.impl.model.IntroModelRoot.resolveConfigExtensions(IntroModelRoot.java:381)
+	at org.eclipse.ui.internal.intro.impl.model.IntroModelRoot.resolveChildren(IntroModelRoot.java:242)
+	at org.eclipse.ui.internal.intro.impl.model.AbstractIntroContainer.getChildren(AbstractIntroContainer.java:86)
+	at org.eclipse.ui.internal.intro.impl.model.IntroModelRoot.loadModel(IntroModelRoot.java:164)
+	at org.eclipse.ui.internal.intro.impl.model.loader.BaseExtensionPointManager.loadModel(BaseExtensionPointManager.java:95)
+	at org.eclipse.ui.internal.intro.impl.model.loader.ExtensionPointManager.loadCurrentModel(ExtensionPointManager.java:61)
+	at org.eclipse.ui.internal.intro.impl.model.loader.ExtensionPointManager.getCurrentModel(ExtensionPointManager.java:73)
+	at org.eclipse.ui.intro.config.CustomizableIntroPart.init(CustomizableIntroPart.java:155)
+	at org.eclipse.ui.internal.ViewIntroAdapterPart.init(ViewIntroAdapterPart.java:156)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:340)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:226)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:595)
+	at org.eclipse.ui.internal.Perspective.showView(Perspective.java:2229)
+	at org.eclipse.ui.internal.WorkbenchPage.busyShowView(WorkbenchPage.java:1067)
+	at org.eclipse.ui.internal.WorkbenchPage$20.run(WorkbenchPage.java:3816)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.showView(WorkbenchPage.java:3813)
+	at org.eclipse.ui.internal.WorkbenchPage.showView(WorkbenchPage.java:3789)
+	at org.eclipse.ui.internal.WorkbenchIntroManager.createIntro(WorkbenchIntroManager.java:173)
+	at org.eclipse.ui.internal.WorkbenchIntroManager.showIntro(WorkbenchIntroManager.java:120)
+	at org.eclipse.ui.application.WorkbenchWindowAdvisor.openIntro(WorkbenchWindowAdvisor.java:177)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchWindowAdvisor.openIntro(IDEWorkbenchWindowAdvisor.java:467)
+	at org.eclipse.ui.internal.WorkbenchWindow.open(WorkbenchWindow.java:779)
+	at org.eclipse.ui.internal.Workbench$22.runWithException(Workbench.java:1059)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3885)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3506)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:803)
+	at org.eclipse.ui.internal.Workbench$28.runWithException(Workbench.java:1384)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3885)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3506)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2316)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+
+!ENTRY org.eclipse.equinox.p2.directorywatcher 4 0 2014-04-15 18:07:11.158
+!MESSAGE The installable unit org.eclipse.ui.win32.translated_host_properties is missing the filename property.
+
+!ENTRY org.eclipse.equinox.p2.repository 4 1007 2014-04-15 18:07:11.480
+!MESSAGE Authentication failed for http://www.adnsandbox.com/tools/ide/install/.
+
+!ENTRY org.eclipse.equinox.p2.directorywatcher 4 0 2014-04-15 18:07:12.973
+!MESSAGE The installable unit org.eclipse.ui.win32.translated_host_properties is missing the filename property.
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:07:55.747
+!MESSAGE  WARN [2014-04-15 18:07:55,743] (BaseRetryAspect.java:isLoginExceptionRetryable:95) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:07:55.749
+!MESSAGE  WARN [2014-04-15 18:07:55,748] (BaseRetryAspect.java:isConnectionExceptionRetryable:131) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:07:55.750
+!MESSAGE  WARN [2014-04-15 18:07:55,749] (ProjectController.java:getRemotePackageNames:882) - Unable to get project packages for project 'test': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:07:55.760
+!MESSAGE  WARN [2014-04-15 18:07:55,759] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:08:38.231
+!MESSAGE  WARN [2014-04-15 18:08:38,228] (BaseRetryAspect.java:isLoginExceptionRetryable:95) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:08:38.232
+!MESSAGE  WARN [2014-04-15 18:08:38,231] (BaseRetryAspect.java:isConnectionExceptionRetryable:131) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:08:38.233
+!MESSAGE  WARN [2014-04-15 18:08:38,232] (ProjectController.java:getRemotePackageNames:882) - Unable to get project packages for project 'test': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:08:38.242
+!MESSAGE  WARN [2014-04-15 18:08:38,241] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:08:46.752
+!MESSAGE  WARN [2014-04-15 18:08:46,751] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:08:46.761
+!MESSAGE  WARN [2014-04-15 18:08:46,760] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:08:47.963
+!MESSAGE  WARN [2014-04-15 18:08:47,962] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:08:47.971
+!MESSAGE  WARN [2014-04-15 18:08:47,970] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:04.356
+!MESSAGE  WARN [2014-04-15 18:09:04,353] (Utils.java:loadDocument:823) - Unable to load document: D:\Users\suspanda\Documents\GitHub\Eclipse\.metadata\.plugins\com.salesforce.ide.core\packageCache.xml (The system cannot find the file specified)
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:06.269
+!MESSAGE  WARN [2014-04-15 18:09:06,268] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:06.277
+!MESSAGE  WARN [2014-04-15 18:09:06,276] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:07.496
+!MESSAGE  WARN [2014-04-15 18:09:07,495] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:07.504
+!MESSAGE  WARN [2014-04-15 18:09:07,503] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:08.920
+!MESSAGE  WARN [2014-04-15 18:09:08,918] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:08.928
+!MESSAGE  WARN [2014-04-15 18:09:08,927] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:10.134
+!MESSAGE  WARN [2014-04-15 18:09:10,133] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:10.142
+!MESSAGE  WARN [2014-04-15 18:09:10,141] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:11.368
+!MESSAGE  WARN [2014-04-15 18:09:11,367] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:11.382
+!MESSAGE  WARN [2014-04-15 18:09:11,381] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:56.007
+!MESSAGE  WARN [2014-04-15 18:09:56,004] (MetadataStubExt.java:tryOneByOne:410) - INVALID_TYPE: Cannot use: WorkflowKnowledgePublish in this organization
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:59.378
+!MESSAGE  WARN [2014-04-15 18:09:59,375] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'BusinessProcess': Unable to get bean for id 'BusinessProcess'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:59.660
+!MESSAGE  WARN [2014-04-15 18:09:59,659] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'CustomField': Unable to get bean for id 'CustomField'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:09:59.690
+!MESSAGE  WARN [2014-04-15 18:09:59,689] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'CustomLabel': Unable to get bean for id 'CustomLabel'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:00.602
+!MESSAGE  WARN [2014-04-15 18:10:00,600] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:00.609
+!MESSAGE  WARN [2014-04-15 18:10:00,608] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:01.822
+!MESSAGE  WARN [2014-04-15 18:10:01,821] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:01.829
+!MESSAGE  WARN [2014-04-15 18:10:01,828] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:03.180
+!MESSAGE  WARN [2014-04-15 18:10:03,178] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:03.187
+!MESSAGE  WARN [2014-04-15 18:10:03,186] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:03.787
+!MESSAGE  WARN [2014-04-15 18:10:03,786] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:03.814
+!MESSAGE  WARN [2014-04-15 18:10:03,813] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'FieldSet': Unable to get bean for id 'FieldSet'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:04.041
+!MESSAGE  WARN [2014-04-15 18:10:04,040] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ListView': Unable to get bean for id 'ListView'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:04.093
+!MESSAGE  WARN [2014-04-15 18:10:04,092] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'NamedFilter': Unable to get bean for id 'NamedFilter'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:04.293
+!MESSAGE  WARN [2014-04-15 18:10:04,292] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'RecordType': Unable to get bean for id 'RecordType'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.031
+!MESSAGE  WARN [2014-04-15 18:10:05,030] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.043
+!MESSAGE  WARN [2014-04-15 18:10:05,042] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.405
+!MESSAGE  WARN [2014-04-15 18:10:05,404] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.477
+!MESSAGE  WARN [2014-04-15 18:10:05,476] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SharingReason': Unable to get bean for id 'SharingReason'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.578
+!MESSAGE  WARN [2014-04-15 18:10:05,577] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ValidationRule': Unable to get bean for id 'ValidationRule'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.603
+!MESSAGE  WARN [2014-04-15 18:10:05,603] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WebLink': Unable to get bean for id 'WebLink'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.653
+!MESSAGE  WARN [2014-04-15 18:10:05,652] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowAlert': Unable to get bean for id 'WorkflowAlert'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.680
+!MESSAGE  WARN [2014-04-15 18:10:05,679] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowFieldUpdate': Unable to get bean for id 'WorkflowFieldUpdate'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.712
+!MESSAGE  WARN [2014-04-15 18:10:05,711] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowKnowledgePublish': Unable to get bean for id 'WorkflowKnowledgePublish'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.738
+!MESSAGE  WARN [2014-04-15 18:10:05,737] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowOutboundMessage': Unable to get bean for id 'WorkflowOutboundMessage'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.763
+!MESSAGE  WARN [2014-04-15 18:10:05,763] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowRule': Unable to get bean for id 'WorkflowRule'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.789
+!MESSAGE  WARN [2014-04-15 18:10:05,788] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowSend': Unable to get bean for id 'WorkflowSend'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:05.814
+!MESSAGE  WARN [2014-04-15 18:10:05,813] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowTask': Unable to get bean for id 'WorkflowTask'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:06.037
+!MESSAGE  WARN [2014-04-15 18:10:06,036] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:10:06.054
+!MESSAGE  WARN [2014-04-15 18:10:06,053] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+
+
+!ENTRY org.eclipse.jface 2 0 2014-04-15 18:10:06.136
+!MESSAGE Ignored reentrant call while viewer is busy. This is only logged once per viewer instance, but similar calls will still be ignored.
+!STACK 0
+java.lang.RuntimeException
+	at org.eclipse.jface.viewers.ColumnViewer.checkBusy(ColumnViewer.java:763)
+	at org.eclipse.jface.viewers.ColumnViewer.refresh(ColumnViewer.java:541)
+	at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:1439)
+	at org.eclipse.ui.dialogs.FilteredTree$2.runInUIThread(FilteredTree.java:513)
+	at org.eclipse.ui.progress.UIJob$1.run(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3885)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3506)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.jface.dialogs.MessageDialog.open(MessageDialog.java:327)
+	at org.eclipse.jface.dialogs.MessageDialog.open(MessageDialog.java:357)
+	at org.eclipse.jface.dialogs.MessageDialog.openWarning(MessageDialog.java:470)
+	at com.salesforce.ide.core.internal.utils.Utils.openWarn(Utils.java:378)
+	at com.salesforce.ide.ui.packagemanifest.PackageManifestController.logAndDisplayWarnMsgIfNeeded(PackageManifestController.java:737)
+	at com.salesforce.ide.ui.packagemanifest.PackageManifestController.createModel(PackageManifestController.java:858)
+	at com.salesforce.ide.ui.packagemanifest.PackageManifestController.updateManifest(PackageManifestController.java:171)
+	at com.salesforce.ide.ui.packagemanifest.PackageManifestController.getEnabledCompTypeTreeNodes(PackageManifestController.java:430)
+	at com.salesforce.ide.ui.packagemanifest.PackageManifestTree$ManifestContentProvider.getElements(PackageManifestTree.java:688)
+	at org.eclipse.jface.viewers.StructuredViewer.getRawChildren(StructuredViewer.java:959)
+	at org.eclipse.jface.viewers.ColumnViewer.getRawChildren(ColumnViewer.java:703)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.getRawChildren(AbstractTreeViewer.java:1330)
+	at org.eclipse.jface.viewers.TreeViewer.getRawChildren(TreeViewer.java:390)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.getFilteredChildren(AbstractTreeViewer.java:636)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.getSortedChildren(AbstractTreeViewer.java:602)
+	at org.eclipse.jface.viewers.AbstractTreeViewer$1.run(AbstractTreeViewer.java:799)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:776)
+	at org.eclipse.jface.viewers.TreeViewer.createChildren(TreeViewer.java:639)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.internalInitializeTree(AbstractTreeViewer.java:1490)
+	at org.eclipse.jface.viewers.TreeViewer.internalInitializeTree(TreeViewer.java:828)
+	at org.eclipse.jface.viewers.AbstractTreeViewer$5.run(AbstractTreeViewer.java:1474)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1392)
+	at org.eclipse.jface.viewers.TreeViewer.preservingSelection(TreeViewer.java:402)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1353)
+	at org.eclipse.jface.viewers.CheckboxTreeViewer.preservingSelection(CheckboxTreeViewer.java:416)
+	at com.salesforce.ide.ui.packagemanifest.PackageManifestTree$PackageManifestTreeViewer.preservingSelection(PackageManifestTree.java:418)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.inputChanged(AbstractTreeViewer.java:1467)
+	at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:274)
+	at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1634)
+	at com.salesforce.ide.ui.packagemanifest.PackageManifestTree.updateTree(PackageManifestTree.java:1684)
+	at com.salesforce.ide.ui.wizards.project.ProjectCustomComponentsComposite.initialize(ProjectCustomComponentsComposite.java:107)
+	at com.salesforce.ide.ui.wizards.project.ProjectCustomComponentsComposite.<init>(ProjectCustomComponentsComposite.java:64)
+	at com.salesforce.ide.ui.wizards.project.ProjectCustomComponentsDialog.createDialogArea(ProjectCustomComponentsDialog.java:54)
+	at org.eclipse.jface.dialogs.Dialog.createContents(Dialog.java:760)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at com.salesforce.ide.ui.wizards.project.ProjectCustomComponentsDialog.create(ProjectCustomComponentsDialog.java:153)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at com.salesforce.ide.ui.wizards.project.ProjectProjectContentComposite$9.widgetDefaultSelected(ProjectProjectContentComposite.java:294)
+	at com.salesforce.ide.ui.wizards.project.ProjectProjectContentComposite$9.widgetSelected(ProjectProjectContentComposite.java:308)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3910)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3503)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.ui.actions.NewProjectAction.run(NewProjectAction.java:117)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3910)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3503)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.914
+!MESSAGE  WARN [2014-04-15 18:15:52,912] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_Bulk_oauth/ConnectivityDevConfigs/Dataloader_Bulk_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.922
+!MESSAGE  WARN [2014-04-15 18:15:52,921] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_Bulk_oauth/modules/sf_com_apps__Dataloader_Bulk_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.924
+!MESSAGE  WARN [2014-04-15 18:15:52,923] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Dataloader_Bulk', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.925
+!MESSAGE  WARN [2014-04-15 18:15:52,924] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_P5r_oauth/ConnectivityDevConfigs/Dataloader_P5r_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.926
+!MESSAGE  WARN [2014-04-15 18:15:52,926] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_P5r_oauth/modules/sf_com_apps__Dataloader_P5r_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.927
+!MESSAGE  WARN [2014-04-15 18:15:52,927] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Dataloader_Partner', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.929
+!MESSAGE  WARN [2014-04-15 18:15:52,928] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_IDE_oauth/ConnectivityDevConfigs/Forcecom_IDE_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.930
+!MESSAGE  WARN [2014-04-15 18:15:52,930] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_IDE_oauth/modules/sf_com_apps__Forcecom_IDE_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.934
+!MESSAGE  WARN [2014-04-15 18:15:52,933] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Forcecom_IDE', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.936
+!MESSAGE  WARN [2014-04-15 18:15:52,935] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_Migration_Tool_oauth/ConnectivityDevConfigs/Forcecom_Migration_Tool_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.937
+!MESSAGE  WARN [2014-04-15 18:15:52,937] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_Migration_Tool_oauth/modules/sf_com_apps__Forcecom_Migration_Tool_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.939
+!MESSAGE  WARN [2014-04-15 18:15:52,938] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Forcecom_Migration_Tool', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.940
+!MESSAGE  WARN [2014-04-15 18:15:52,939] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_M4e_Dashboards_oauth/ConnectivityDevConfigs/S8e_M4e_Dashboards_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.941
+!MESSAGE  WARN [2014-04-15 18:15:52,941] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_M4e_Dashboards_oauth/modules/sf_com_apps__S8e_M4e_Dashboards_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.942
+!MESSAGE  WARN [2014-04-15 18:15:52,942] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_Mobile_Dashboards', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.944
+!MESSAGE  WARN [2014-04-15 18:15:52,943] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_T3h_oauth/ConnectivityDevConfigs/S8e_T3h_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.945
+!MESSAGE  WARN [2014-04-15 18:15:52,945] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_T3h_oauth/modules/sf_com_apps__S8e_T3h_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.947
+!MESSAGE  WARN [2014-04-15 18:15:52,946] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_Touch', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.948
+!MESSAGE  WARN [2014-04-15 18:15:52,947] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_for_Outlook_oauth/ConnectivityDevConfigs/S8e_for_Outlook_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.949
+!MESSAGE  WARN [2014-04-15 18:15:52,948] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_for_Outlook_oauth/modules/sf_com_apps__S8e_for_Outlook_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.950
+!MESSAGE  WARN [2014-04-15 18:15:52,950] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_for_Outlook', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.952
+!MESSAGE  WARN [2014-04-15 18:15:52,951] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth_c4s/Canvases/Workbench_oauth_c4sCanvas.Canvas', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.953
+!MESSAGE  WARN [2014-04-15 18:15:52,952] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth_c4s/modules/sf_com_apps__Workbench_oauth_c4s', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.954
+!MESSAGE  WARN [2014-04-15 18:15:52,954] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth/ConnectivityDevConfigs/Workbench_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.956
+!MESSAGE  WARN [2014-04-15 18:15:52,955] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth/modules/sf_com_apps__Workbench_oauth', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:52.957
+!MESSAGE  WARN [2014-04-15 18:15:52,956] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Workbench', tagging as component of type 'Unknown'
+
+
+!ENTRY com.salesforce.ide.core 4 0 2014-04-15 18:15:52.958
+!MESSAGE ERROR [2014-04-15 18:15:52,958] (ProjectPackageList.java:generateComponents:473) - Filepath-zip mapping is null or empty for package 'Salesforce Connected Apps' [0A3M0000000D2OkKAK] - skipping component generation
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:15:55.447
+!MESSAGE  WARN [2014-04-15 18:15:55,437] (ProjectPackageList.java:saveResources:1153) - Component list in project package 'Salesforce Connected Apps' is empty.  No resources to save.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:16:08.385
+!MESSAGE  WARN [2014-04-15 18:16:08,383] (IntroEditorInput.java:loadDocument:130) - org.xml.sax.SAXParseException: The entity name must immediately follow the '&' in the entity reference.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:18:39.241
+!MESSAGE  WARN [2014-04-15 18:18:39,240] (ConnectionFactory.java:clearCache:212) - Clearing the following cached connections
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:18:39.339
+!MESSAGE  WARN [2014-04-15 18:18:39,338] (DescribeObjectRegistry.java:clearCache:657) - Clearing cached describes
+
+
+!ENTRY com.salesforce.ide.core 2 0 2014-04-15 18:18:39.340
+!MESSAGE  WARN [2014-04-15 18:18:39,339] (MetadataFactory.java:clearCache:123) - Clearing the following cached metadata stubs
+
+!SESSION 2014-04-15 18:18:43.068 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_33
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.php.product -product org.eclipse.epp.package.php.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.php.product -data D:\Users\suspanda\Documents\GitHub\Eclipse -product org.eclipse.epp.package.php.product
+
+!ENTRY org.eclipse.equinox.p2.directorywatcher 4 0 2014-04-15 18:18:49.331
+!MESSAGE The installable unit org.eclipse.ui.win32.translated_host_properties is missing the filename property.
+
+!ENTRY org.eclipse.equinox.p2.directorywatcher 4 0 2014-04-15 18:18:52.885
+!MESSAGE The installable unit org.eclipse.ui.win32.translated_host_properties is missing the filename property.
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.638
+!MESSAGE NLS unused message: missingOneOfTwoAttributes in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.639
+!MESSAGE NLS unused message: categoryNotDefined in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.639
+!MESSAGE NLS unused message: actionNotDefined in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.640
+!MESSAGE NLS unused message: actionAlreadyDefined in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.640
+!MESSAGE NLS unused message: presetNotDefined in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.641
+!MESSAGE NLS unused message: templateNotDefined in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.642
+!MESSAGE NLS unused message: invalidActionType in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.642
+!MESSAGE NLS unused message: invalidEventHandlerType in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.643
+!MESSAGE NLS unused message: invalidRequiresConstraint in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.643
+!MESSAGE NLS unused message: invalidConflictsConstraint in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.644
+!MESSAGE NLS unused message: deprecatedRuntimeChangedAction in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.644
+!MESSAGE NLS unused message: tracingActionSorting in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.645
+!MESSAGE NLS unused message: tracingFrameworkActivationStarting in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.645
+!MESSAGE NLS unused message: tracingFrameworkActivationFinished in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.646
+!MESSAGE NLS missing message: problemCaseNotRecognized in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-15 18:20:58.649
+!MESSAGE NLS missing message: runtimeComponentTypeNotDefined in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2014-04-15 18:20:58.650
+!MESSAGE Project facet jst.web has not been defined. It is used in plugin org.eclipse.wst.jsdt.web.core.

@@ -1,0 +1,89 @@
+ WARN [2014-04-15 18:07:55,743] (BaseRetryAspect.java:isLoginExceptionRetryable:95) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2014-04-15 18:07:55,748] (BaseRetryAspect.java:isConnectionExceptionRetryable:131) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2014-04-15 18:07:55,749] (ProjectController.java:getRemotePackageNames:882) - Unable to get project packages for project 'test': Invalid username, password, security token; or user locked out.
+ WARN [2014-04-15 18:07:55,759] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2014-04-15 18:08:38,228] (BaseRetryAspect.java:isLoginExceptionRetryable:95) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2014-04-15 18:08:38,231] (BaseRetryAspect.java:isConnectionExceptionRetryable:131) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2014-04-15 18:08:38,232] (ProjectController.java:getRemotePackageNames:882) - Unable to get project packages for project 'test': Invalid username, password, security token; or user locked out.
+ WARN [2014-04-15 18:08:38,241] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2014-04-15 18:08:46,751] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:08:46,760] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:08:47,962] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:08:47,970] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:09:04,353] (Utils.java:loadDocument:823) - Unable to load document: D:\Users\suspanda\Documents\GitHub\Eclipse\.metadata\.plugins\com.salesforce.ide.core\packageCache.xml (The system cannot find the file specified)
+ WARN [2014-04-15 18:09:06,268] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:09:06,276] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:09:07,495] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:09:07,503] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:09:08,918] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:09:08,927] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:09:10,133] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:09:10,141] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:09:11,367] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:09:11,381] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:09:56,004] (MetadataStubExt.java:tryOneByOne:410) - INVALID_TYPE: Cannot use: WorkflowKnowledgePublish in this organization
+ WARN [2014-04-15 18:09:59,375] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'BusinessProcess': Unable to get bean for id 'BusinessProcess'
+ WARN [2014-04-15 18:09:59,659] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'CustomField': Unable to get bean for id 'CustomField'
+ WARN [2014-04-15 18:09:59,689] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'CustomLabel': Unable to get bean for id 'CustomLabel'
+ WARN [2014-04-15 18:10:00,600] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:10:00,608] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:10:01,821] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:10:01,828] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:10:03,178] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:10:03,186] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:10:03,786] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:10:03,813] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'FieldSet': Unable to get bean for id 'FieldSet'
+ WARN [2014-04-15 18:10:04,040] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ListView': Unable to get bean for id 'ListView'
+ WARN [2014-04-15 18:10:04,092] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'NamedFilter': Unable to get bean for id 'NamedFilter'
+ WARN [2014-04-15 18:10:04,292] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'RecordType': Unable to get bean for id 'RecordType'
+ WARN [2014-04-15 18:10:05,030] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:10:05,042] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:10:05,404] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:10:05,476] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SharingReason': Unable to get bean for id 'SharingReason'
+ WARN [2014-04-15 18:10:05,577] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ValidationRule': Unable to get bean for id 'ValidationRule'
+ WARN [2014-04-15 18:10:05,603] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WebLink': Unable to get bean for id 'WebLink'
+ WARN [2014-04-15 18:10:05,652] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowAlert': Unable to get bean for id 'WorkflowAlert'
+ WARN [2014-04-15 18:10:05,679] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowFieldUpdate': Unable to get bean for id 'WorkflowFieldUpdate'
+ WARN [2014-04-15 18:10:05,711] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowKnowledgePublish': Unable to get bean for id 'WorkflowKnowledgePublish'
+ WARN [2014-04-15 18:10:05,737] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowOutboundMessage': Unable to get bean for id 'WorkflowOutboundMessage'
+ WARN [2014-04-15 18:10:05,763] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowRule': Unable to get bean for id 'WorkflowRule'
+ WARN [2014-04-15 18:10:05,788] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowSend': Unable to get bean for id 'WorkflowSend'
+ WARN [2014-04-15 18:10:05,813] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'WorkflowTask': Unable to get bean for id 'WorkflowTask'
+ WARN [2014-04-15 18:10:06,036] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:10:06,053] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
+ WARN [2014-04-15 18:15:52,912] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_Bulk_oauth/ConnectivityDevConfigs/Dataloader_Bulk_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,921] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_Bulk_oauth/modules/sf_com_apps__Dataloader_Bulk_oauth', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,923] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Dataloader_Bulk', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,924] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_P5r_oauth/ConnectivityDevConfigs/Dataloader_P5r_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,926] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_P5r_oauth/modules/sf_com_apps__Dataloader_P5r_oauth', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,927] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Dataloader_Partner', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,928] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_IDE_oauth/ConnectivityDevConfigs/Forcecom_IDE_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,930] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_IDE_oauth/modules/sf_com_apps__Forcecom_IDE_oauth', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,933] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Forcecom_IDE', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,935] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_Migration_Tool_oauth/ConnectivityDevConfigs/Forcecom_Migration_Tool_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,937] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_Migration_Tool_oauth/modules/sf_com_apps__Forcecom_Migration_Tool_oauth', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,938] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Forcecom_Migration_Tool', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,939] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_M4e_Dashboards_oauth/ConnectivityDevConfigs/S8e_M4e_Dashboards_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,941] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_M4e_Dashboards_oauth/modules/sf_com_apps__S8e_M4e_Dashboards_oauth', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,942] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_Mobile_Dashboards', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,943] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_T3h_oauth/ConnectivityDevConfigs/S8e_T3h_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,945] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_T3h_oauth/modules/sf_com_apps__S8e_T3h_oauth', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,946] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_Touch', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,947] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_for_Outlook_oauth/ConnectivityDevConfigs/S8e_for_Outlook_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,948] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_for_Outlook_oauth/modules/sf_com_apps__S8e_for_Outlook_oauth', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,950] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_for_Outlook', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,951] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth_c4s/Canvases/Workbench_oauth_c4sCanvas.Canvas', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,952] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth_c4s/modules/sf_com_apps__Workbench_oauth_c4s', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,954] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth/ConnectivityDevConfigs/Workbench_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,955] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth/modules/sf_com_apps__Workbench_oauth', tagging as component of type 'Unknown'
+ WARN [2014-04-15 18:15:52,956] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Workbench', tagging as component of type 'Unknown'
+ERROR [2014-04-15 18:15:52,958] (ProjectPackageList.java:generateComponents:473) - Filepath-zip mapping is null or empty for package 'Salesforce Connected Apps' [0A3M0000000D2OkKAK] - skipping component generation
+ WARN [2014-04-15 18:15:55,437] (ProjectPackageList.java:saveResources:1153) - Component list in project package 'Salesforce Connected Apps' is empty.  No resources to save.
+ WARN [2014-04-15 18:16:08,383] (IntroEditorInput.java:loadDocument:130) - org.xml.sax.SAXParseException: The entity name must immediately follow the '&' in the entity reference.
+ WARN [2014-04-15 18:18:39,240] (ConnectionFactory.java:clearCache:212) - Clearing the following cached connections
+ WARN [2014-04-15 18:18:39,338] (DescribeObjectRegistry.java:clearCache:657) - Clearing cached describes
+ WARN [2014-04-15 18:18:39,339] (MetadataFactory.java:clearCache:123) - Clearing the following cached metadata stubs

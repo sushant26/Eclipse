@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?>
+<?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" version="2.0">
+
+<channel>
+	<title>Force.com Blogs</title>
+	
+	<link>http://blogs.developerforce.com</link>
+	<description/>
+	<lastBuildDate>Fri, 11 Apr 2014 16:40:51 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" href="http://feeds.feedburner.com/SforceBlog" rel="self" type="application/rss+xml"/><feedburner:info uri="sforceblog"/><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" href="http://pubsubhubbub.appspot.com/" rel="hub"/><feedburner:emailServiceId>SforceBlog</feedburner:emailServiceId><feedburner:feedburnerHostname>http://feedburner.google.com</feedburner:feedburnerHostname><feedburner:feedFlare href="http://add.my.yahoo.com/rss?url=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif">Subscribe with My Yahoo!</feedburner:feedFlare><feedburner:feedFlare href="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://www.newsgator.com/images/ngsub1.gif">Subscribe with NewsGator</feedburner:feedFlare><feedburner:feedFlare href="http://feeds.my.aol.com/add.jsp?url=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://o.aolcdn.com/favorites.my.aol.com/webmaster/ffclient/webroot/locale/en-US/images/myAOLButtonSmall.gif">Subscribe with My AOL</feedburner:feedFlare><feedburner:feedFlare href="http://www.bloglines.com/sub/http://feeds.feedburner.com/SforceBlog" src="http://www.bloglines.com/images/sub_modern11.gif">Subscribe with Bloglines</feedburner:feedFlare><feedburner:feedFlare href="http://www.netvibes.com/subscribe.php?url=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://www.netvibes.com/img/add2netvibes.gif">Subscribe with Netvibes</feedburner:feedFlare><feedburner:feedFlare href="http://fusion.google.com/add?feedurl=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare><feedburner:feedFlare href="http://www.pageflakes.com/subscribe.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://www.pageflakes.com/ImageFile.ashx?instanceId=Static_4&amp;fileName=ATP_blu_91x17.gif">Subscribe with Pageflakes</feedburner:feedFlare><item>
+		<title>Monitoring Apex Test Code Coverage</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/kTBA9sfDwDY/monitoring-apex-test-code-coverage.html</link>
+		<comments>http://blogs.developerforce.com/developer-relations/2014/04/monitoring-apex-test-code-coverage.html#comments</comments>
+		<pubDate>Fri, 11 Apr 2014 00:19:44 +0000</pubDate>
+		<dc:creator>Leon de Beer</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[apex test code]]></category>
+		<category><![CDATA[tooling api]]></category>
+
+		<guid isPermaLink="false">http://26.57491</guid>
+		<description><![CDATA[<a href="http://blogs.developerforce.com/developer-relations/2014/04/monitoring-apex-test-code-coverage.html"><img align="left" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1397153190/Gears_150_jvzimg.jpg" class="alignleft wp-post-image tfe" alt="" title="Apex Testing Code Coverage" /></a>Learn how you can use the recently released Tooling API to maintain detailed knowledge on how our test code is evolving over time; which classes and triggers need more work; and how classes contribute to the overall test code coverage in your org.]]></description>
+				<content:encoded><![CDATA[<p><img class="alignleft wp-image-61271" title="Apex Testing Code Coverage" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1397153190/Gears_150_jvzimg.jpg" width="150" height="150" />In <a title="Create apex test data" href="http://blogs.developerforce.com/developer-relations/2013/03/apex-test-code-coverage-done-the-easy-way.html" target="_blank">a previous </a>post I discussed why Apex Test code is a good thing and how the creation of test data could be managed using an Apex test code generation tool. In this post I shall discuss how we can use the recently released Tooling API to maintain detailed knowledge on how our test code is evolving over time; which classes and triggers need more work; and how classes contribute to the overall test code coverage in your org.</p>
+<p>With Winter ’14 we released the new Tooling API, which (amongst other things) allowed us access to a number of new objects in our Salesforce org which store code coverage information. The Developer console uses these objects to show us the number of covered and uncovered lines, as well as the details of which test classes contribute to code coverage.</p>
+<h2>An Apex Test Code Coverage Tool</h2>
+<p>For the first time, the tooling API provides us with an easy way to extract this data from your target org – in particular from the ApexCodeCoverage and ApexCodeCoverageAggregate objects – and with that it allows you to develop tools which store and manipulate this data.</p>
+<p>I was recently working on a project where, as part of a development sprint, a significant amount of code was added. As a part of this project we looked at a way of keeping track of how test code development was keeping up with the code. During this project we <a title="Apex test code coverage tool" href="https://bitbucket.org/leondebeer/apextestcodecoverage" target="_blank">developed a simple tool</a> that stores this data in a CSV file, which thereby allows us to open and maintain this data using spreadsheets.</p>
+<p><a title="Apex test code coverage tool" href="https://bitbucket.org/leondebeer/apextestcodecoverage" target="_blank">The too</a>l that we developed can be found here (this is not an official / Salesforce supported product).  It was developed in Java and both the source, JAR and exe can be found. The way the tool works:</p>
+<ul>
+<li>It accepts a number of command line arguments including
+<ul>
+<li>Login (-u)</li>
+<li>Password (Don’t forget your access token!) (-p)</li>
+<li>Authentication End Point (-a)</li>
+</ul>
+</li>
+<li>It uses the REST Tooling Api to retrieve code coverage details from the Org</li>
+<li>It stores the resulting coverage data in a CSV file</li>
+</ul>
+<p>We used this tool to gather data on a daily basis during the development cycle, allowing us to compare coverage results over time and where necessary re-focus our test code development.</p>
+<p>By default this tool lists all classes and lines covered / not covered by test code. If you specify class or trigger names as command line arguments (-c), it will show (for those classes/triggers) which test classes contribute to the coverage for these classes instead. As a result, you can analyse in detail where you test code is (and isn’t) coming from.</p>
+<p>When using this tool please note that:</p>
+<ul>
+<li>The number of Apex classes in our org was not high enough to trigger batched results being returned by the Rest API so this part was never tested. If you run into issues there – give me some sample data and I’ll update the code</li>
+<li>If (in your spreadsheet) you add up the total number of lines covered, uncovered and in total, you can calculate the total test code coverage of your org. Whilst this calculation is not identical to the one used in your Salesforce org, this method has given us pretty accurate results.</li>
+<li>There was an issue in Winter ’14 where some classes made invalid contributions to the overall test coverage results. Use the output of this tool to determine which of these classes have no test coverage and add at least 1% coverage to these classes and triggers to avoid this issue.</li>
+</ul>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=kTBA9sfDwDY:C0bXYMfchaA:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=kTBA9sfDwDY:C0bXYMfchaA:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=kTBA9sfDwDY:C0bXYMfchaA:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=kTBA9sfDwDY:C0bXYMfchaA:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=kTBA9sfDwDY:C0bXYMfchaA:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=kTBA9sfDwDY:C0bXYMfchaA:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=kTBA9sfDwDY:C0bXYMfchaA:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/kTBA9sfDwDY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blogs.developerforce.com/developer-relations/2014/04/monitoring-apex-test-code-coverage.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blogs.developerforce.com/developer-relations/2014/04/monitoring-apex-test-code-coverage.html</feedburner:origLink></item>
+		<item>
+		<title>Building Content-Rich Visualforce Pages with Salesforce CRM Content</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/bxSp8cbN3Bc/building-content-rich-visualforce-pages-with-salesforce-crm-content.html</link>
+		<comments>http://blogs.developerforce.com/engineering/2014/04/building-content-rich-visualforce-pages-with-salesforce-crm-content.html#comments</comments>
+		<pubDate>Wed, 09 Apr 2014 23:58:14 +0000</pubDate>
+		<dc:creator>markus-spohn</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[apex]]></category>
+		<category><![CDATA[apex code]]></category>
+		<category><![CDATA[architecture]]></category>
+		<category><![CDATA[Salesforce CRM Content]]></category>
+		<category><![CDATA[visualforce]]></category>
+
+		<guid isPermaLink="false">http://25.17071</guid>
+		<description><![CDATA[<a href="http://blogs.developerforce.com/engineering/2014/04/building-content-rich-visualforce-pages-with-salesforce-crm-content.html"><img align="left" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1397075768/blogpost_image_umxz9r.jpg" class="alignleft wp-post-image tfe" alt="" title="" /></a>With Salesforce CRM Content, you can organize, share, search, and manage content within your organization and across key areas of the Salesforce application. This content can include all file types&#8211;from traditional business documents, such as Microsoft® PowerPoint® presentations&#8211;to Google Docs™ Web pages and audio, video, and image files. In this blog post, you can learn about [...]]]></description>
+				<content:encoded><![CDATA[<p><img class="alignright" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1397075768/blogpost_image_umxz9r.jpg" width="150" height="150" /></p>
+<p dir="ltr">With Salesforce CRM Content, you can organize, share, search, and manage content within your organization and across key areas of the Salesforce application. This content can include all file types&#8211;from traditional business documents, such as Microsoft® PowerPoint® presentations&#8211;to Google Docs™ Web pages and audio, video, and image files.</p>
+<p dir="ltr">In this blog post, you can learn about the benefits of storing and managing images in Salesforce CRM Content, and about how to use the power of Salesforce CRM Content and Visualforce to build dynamic pages.</p>
+<h1>Why Manage Images in Salesforce CRM Content?</h1>
+<p dir="ltr">The overall idea and functional requirements would be to build a Visualforce page that includes images that change relatively often (e.g., a page that shares global news stories). Because the images will change regularly, storing them as <a href="http://help.salesforce.com/HTViewHelpDoc?id=pages_static_resources.htm&amp;language=en_US">Static Resources in Salesforce</a> and referencing them by URL in your Visualforce markup might not be such a great idea, as it might mean that the content management for the images and the page maintenance itself will require quite a bit of effort and changing code.</p>
+<p dir="ltr">To simplify and streamline these tasks, you can use Salesforce CRM Content to manage the images. The versioning feature in Salesforce CRM Content makes it easy to upload new versions of a document, or in this case, a new image that represents the latest version of a document. All that you need to do in your page is reference the latest version of the document. After doing that, swapping out images is as easy as uploading a new document version.</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/OOVKreM14J5nCy0FfmgK7Ue4OC4Q3AXtfBXSG3UTZSGGsVj-XTCt-guldagFDKlDmZaw8asMDrWIIDGNRN3t-BKvzbGeLr0KsmptHxb6stf-nWgW8UiTwtAm6OkG4_BZoA" width="624px;" height="349px;" /></p>
+<p dir="ltr">How can you reference the images that you’ve stored in Salesforce CRM Content in your Visualforce markup? That’s where the Salesforce CRM Content thumbnail rendition servlet comes into play. The thumbnail rendition servlet is used for various common processes in Salesforce (e.g., rendering thumbnails and previews of files that are shared in Chatter posts), but it also has great, lesser-known applications, including the one that appears in this blog post.</p>
+<p dir="ltr">Note: This application approach requires that Salesforce CRM Content licenses be assigned to all Salesforce users who access the Visualforce page.</p>
+<h1>Implementing your Visualforce Page and Apex Controller</h1>
+<p dir="ltr">Implementing the Salesforce CRM Content thumbnail rendition servlet is pretty straightforward.</p>
+<h2>Page Controller</h2>
+<p dir="ltr">In the Visualforce page controller, select the ID of the latest version of your document, using its document name or its contentDocId, which appears here.</p>
+<pre>Public class MyPageController {
+
+  ContentVersion[] cvs = [select id from contentversion where contentdocumentid=&lt;contentDocId&gt; and isLatest=true];
+
+}</pre>
+<p dir="ltr">Now that you have selected the ID of your latest document version, you can now build the Salesforce CRM Content thumbnail rendition servlet URL and assign it to a public controller variable.</p>
+<pre>Public class MyPageController {
+
+  public String imageUrl {get; set;}
+
+  ContentVersion[] cvs = [select id from contentversion where contentdocumentid=&lt;contentDocId&gt; and isLatest=true];
+
+  imageUrl = '/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&amp;versionId=' + cvs[0].id;
+
+}</pre>
+<h2>Visualforce Page</h2>
+<p dir="ltr">In the Visualforce page markup, you can now use the &lt;apex:image&gt; component to reference the Salesforce CRM Content image. To do this, just add the controller variable that holds the thumbnail rendition servlet URL as the value for the url parameter.</p>
+<pre>&lt;apex:page controller=”MyPageController”&gt;
+
+  &lt;apex:image url=”{!imageUrl}”... /&gt;
+
+&lt;/apex:page&gt;</pre>
+<p dir="ltr">And you’re done! That’s really all there is to it. Swapping out images on this Visualforce page is going to be as easy as uploading a new document version to Salesforce CRM Content. No code changes in the Visualforce markup or the controller code are required!</p>
+<h1>Additional Salesforce CRM Content Considerations</h1>
+<p dir="ltr">When you consider using the Salesforce CRM Content approach for your Visualforce pages, it’s important to remember a few things.</p>
+<ul>
+<li>The Salesforce CRM Content thumbnail rendition servlet supports three different rendition sizes.
+<ul>
+<li>120 pixels × 90 pixels</li>
+<li>240 pixels × 180 pixels</li>
+<li>720 pixels × 480 pixels</li>
+</ul>
+</li>
+</ul>
+<p style="padding-left: 25px">The desired rendition size can be passed as a parameter in the URL:<br />
+/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&amp;versionId=&#8217; + cvs[0].id;<br />
+For the three supported rendition sizes, the valid values for the rendition parameter are THUMB120BY90, THUMB240BY180, and THUMB720BY480.</p>
+<ul>
+<li>The thumbnail rendition servlet URL is not versioned. Also, while Salesforce doesn’t have any immediate plans to change it, the thumbnail rendition servlet URL is subject to change without notice.</li>
+<li>When building high-volume public pages using Force.com Sites, it’s best to upload images as static resources and reference them as static resources on the page to take advantage of <a href="http://help.salesforce.com/HTViewHelpDoc?id=sites_caching.htm&amp;language=en_US">Force.com Site Caching</a> and the Salesforce Content Delivery Network (CDN). <em id="__mceDel"><em id="__mceDel"> </em></em></li>
+</ul>
+<h1></h1>
+<h1>About the Author and CCE Technical Enablement</h1>
+<p dir="ltr"><a href="https://twitter.com/markus_spohn">Markus Spohn</a> is an Architect Evangelist within the Technical Enablement team of the salesforce.com Customer-Centric Engineering group. The team’s mission is to help customers understand how to implement technically sound salesforce.com solutions. Check out all of the resources that this team maintains on the <a href="http://developer.force.com/architect">Architect Core Resources</a> page of Developer Force.</p>
+<p>&nbsp;</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=bxSp8cbN3Bc:kqaO6RA8JVg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=bxSp8cbN3Bc:kqaO6RA8JVg:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=bxSp8cbN3Bc:kqaO6RA8JVg:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=bxSp8cbN3Bc:kqaO6RA8JVg:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=bxSp8cbN3Bc:kqaO6RA8JVg:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=bxSp8cbN3Bc:kqaO6RA8JVg:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=bxSp8cbN3Bc:kqaO6RA8JVg:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/bxSp8cbN3Bc" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blogs.developerforce.com/engineering/2014/04/building-content-rich-visualforce-pages-with-salesforce-crm-content.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blogs.developerforce.com/engineering/2014/04/building-content-rich-visualforce-pages-with-salesforce-crm-content.html</feedburner:origLink></item>
+		<item>
+		<title>Building Beautiful Mobile Apps In Visualforce Using AngularJS And Ionic – Part II</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/3dZ_uDcTNZ8/part-2-building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic.html</link>
+		<comments>http://blogs.developerforce.com/developer-relations/2014/04/part-2-building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic.html#comments</comments>
+		<pubDate>Tue, 08 Apr 2014 15:40:17 +0000</pubDate>
+		<dc:creator>Raja Rao DV</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[angularJS]]></category>
+		<category><![CDATA[apex]]></category>
+		<category><![CDATA[ionic]]></category>
+		<category><![CDATA[ios7]]></category>
+		<category><![CDATA[mobile]]></category>
+		<category><![CDATA[mobile app]]></category>
+		<category><![CDATA[RemoteTK]]></category>
+		<category><![CDATA[salesforce]]></category>
+		<category><![CDATA[salesforce.com]]></category>
+		<category><![CDATA[salesforce1]]></category>
+		<category><![CDATA[visualforce]]></category>
+
+		<guid isPermaLink="false">http://26.60581</guid>
+		<description><![CDATA[<a href="http://blogs.developerforce.com/developer-relations/2014/04/part-2-building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic.html"><img align="left" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396876428/ionic_angular_salesforce1_f2i9sa.png" class="alignleft wp-post-image tfe" alt="" title="" /></a>This is a continuation of Part 1 of my previous blog that had 3 short videos about AngularJS, Ionic and also how to port it to Visualforce.
+In this blog we will take a look at how to make our example Ionic app interact with Salesforce and then make it work inside Salesforce1 mobile app.]]></description>
+				<content:encoded><![CDATA[<p><img class="alignnone wp-image-60741" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396876428/ionic_angular_salesforce1_f2i9sa.png" width="1387" height="237" />This is a continuation of <a href="http://blogs.developerforce.com/developer-relations/2014/04/building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic-part-1.html" target="_blank">Part 1</a> of my previous blog that had 3 short videos (1. <a href="https://www.youtube.com/watch?v=-zCQfZUfvxA" target="_blank">An overview of Ionic and AngularJS</a>, 2. <a href="http://youtu.be/FlDK0ed6H-k" target="_blank">Code walkthrough</a> 3.<a href="http://youtu.be/piWILJDw8pY" target="_blank"> Port Ionic app to Visualforce</a>) and got everything started.</p>
+<p>In this blog we will take a look at how to make our example Ionic app interact with Salesforce and then make it work inside Salesforce1 mobile app.</p>
+<p>&nbsp;</p>
+<h1>Interact With Salesforce Using RemoteTK [~5 mins]</h1>
+<p>This short video shows how to interact with Salesforce. Specifically we will use <a href="https://github.com/developerforce/Force.com-JavaScript-REST-Toolkit#using-remotetk-in-a-visualforce-page" target="_blank">RemoteTK library</a> to make AJAX calls. RemoteTK library internally uses <a href="https://www.salesforce.com/us/developer/docs/pages/Content/pages_js_remoting.htm" target="_blank">JavaScript Remoting</a> / Remote Actions to perform CRUD operation. And because these calls don&#8217;t hit Salesforce&#8217;s API servers these calls don&#8217;t count against API limits.</p>
+<p><iframe width="500" height="281" src="http://www.youtube.com/embed/3VZNxmFZV9E?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<h1>Run Ionic App As Salesforce1 Mobile App [~2 mins]</h1>
+<p>This short video show you that although our single-page-app is made up of multiple Visualforce pages, we just need to make it&#8217;s index page <strong>(myapp_index_html)</strong> Salesforce1 compatible.</p>
+<p><iframe width="500" height="281" src="http://www.youtube.com/embed/TyV6ZHTVtFU?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<h1>Unmanaged Package (Part 1 And Part2):</h1>
+<p>Here is the link to an Unmanaged Package (Part 1 and Part2): https://login.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000Crfo</p>
+<p>Note: To run in Salesforce1, make to sure to add the &#8220;My App&#8221; tab to the list of tabs in<strong> Mobile Navigation </strong>section.</p>
+<p>&nbsp;</p>
+<h1>To Be Continued..</h1>
+<p>So far we have gotten the example Ionic app run as Salesforce1 app but that&#8217;s just scratching the surface. In future blogs it will become more performant, more beautiful and more interesting, so stay tuned. In the mean time if you have questions or comments, you can reach me at<strong> <a href="http://twitter.com/rajaraodv" target="_blank">@rajaraodv</a></strong>.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=3dZ_uDcTNZ8:g9FWYI7JMQk:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=3dZ_uDcTNZ8:g9FWYI7JMQk:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=3dZ_uDcTNZ8:g9FWYI7JMQk:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=3dZ_uDcTNZ8:g9FWYI7JMQk:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=3dZ_uDcTNZ8:g9FWYI7JMQk:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=3dZ_uDcTNZ8:g9FWYI7JMQk:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=3dZ_uDcTNZ8:g9FWYI7JMQk:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/3dZ_uDcTNZ8" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blogs.developerforce.com/developer-relations/2014/04/part-2-building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blogs.developerforce.com/developer-relations/2014/04/part-2-building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic.html</feedburner:origLink></item>
+		<item>
+		<title>Are Events in Your Marketing Mix? Make a Connection and Expand Your Reach</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/RQO9CfN_Q9o/are-events-in-your-marketing-mix-make-a-connection-and-expand-your-reach.html</link>
+		<comments>http://blogs.developerforce.com/isv/2014/04/are-events-in-your-marketing-mix-make-a-connection-and-expand-your-reach.html#comments</comments>
+		<pubDate>Mon, 07 Apr 2014 18:40:17 +0000</pubDate>
+		<dc:creator>Peri McDonald</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Best Practices]]></category>
+		<category><![CDATA[Events]]></category>
+		<category><![CDATA[Partners]]></category>
+
+		<guid isPermaLink="false">http://30.13531</guid>
+		<description><![CDATA[<a href="http://blogs.developerforce.com/isv/2014/04/are-events-in-your-marketing-mix-make-a-connection-and-expand-your-reach.html"><img align="left" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1397233375/Thumb_zawbeu.jpg" class="alignleft wp-post-image tfe" alt="" title="" /></a>It is pretty well known that at salesforce.com we love our events. In a year we host hundreds that range in size and audience, all connecting people live in a meaningful way. Whether it is an executive round table, a regional tour event, a fifteenth birthday party, or Dreamforce, we see and feel the value of face-to-face [...]]]></description>
+				<content:encoded><![CDATA[<p>I<img class="alignright wp-image-13931" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1397233375/Thumb_zawbeu.jpg" width="130" height="130" />t is pretty well known that at <span style="text-decoration: underline;">salesforce.com</span> we love our events. In a year we host hundreds that range in size and audience, all connecting people live in a meaningful way. Whether it is an executive round table, a regional tour event, a fifteenth birthday party, or Dreamforce, we see and feel the value of face-to-face marketing.</p>
+<p>We are big believers in the connections that events create between people and businesses. As we develop our marketing plans, we consider what is important to each audience and explore how to bring our brand and solutions out to ensure impact. Part of our vision for events is bringing our partners to the forefront, illustrating the diversity of our ecosystem and nurturing the growth of the industry by showcasing a variety of solutions and services for our customers and prospects – our community definitely shares our passion for face-to-face interactions and the business value they provide. Many of the conversations I have with our partner community occur in or around events and commonly include analysis of lead quantity and quality, return on sponsorship investments, pipeline development and deal movement, the importance of awareness, and the undeniable value of human connections in business.</p>
+<p>There is no denying the passion that B2B Marketers have for the human connections that face-to-face marketing offers, and some recent industry analysis, which we have brought to life in the infographic included in this post, further emphasize why experiences are such an important part of the marketing mix. Events drive revenue, provide insightful data, and build connections that matter. Findings from MarketingProfs and eMarketer, as well as The 2013 ABM Value of B-to-B report, which you will see in this infographic, illustrate how event marketing continues to deliver. Please note this data is industry specific and does not represent salesforce.com results or findings.</p>
+<p>The research shows that 76% of B2B Marketers found that event sponsorships generated leads and created awareness, both key factors for growing business. 70% of these Marketers also noted that attendance at in-person events is generally effective. The buzz that face-to-face experiences nurture caused B2B Marketers to attribute 46% of their revenue creation to events in 2013 as they generate leads, gather demographic details, and nurture in person connections that drive business forward.</p>
+<p><img class="alignleft wp-image-13941" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1397233437/Figure1_flqtky.jpg" width="300" height="1061" /></p>
+<p>As Marketers continue to refine their approaches, and the scope of events expand to include hybrid events, digital experiences, and ongoing communication via a variety of channels, the potential impact of experience marketing only increases. Expanding the event lifecycle allows Marketers to target the most valuable audiences for their businesses and utilize multiple means to engage targets pre-event, onsite, and post-event. Surveys, eLearning activities, gamification, content interaction, social outlet engagement, and mobile applications are just a few of the ways that face-to-face event hosts are innovating for impact and B2B Marketers are onboard.</p>
+<p>What’s next? If you are a Salesforce user or are interested in further experiencing Salesforce keep an eye on <a href="http://www.salesforce.com/events">www.salesforce.com/events</a> for an event in your area or join us in San Francisco this October for our annual Dreamforce conference, details on <a href="http://www.dreamforce.com">www.dreamforce.com</a>. If you are a salesforce.com Partner and are interested in sponsoring a salesforce.com event contact our Partner Marketing Team at <a href="mailto:partnersuccess@salesforce.com">partnersuccess@salesforce.com</a> to discuss the opportunities that are available.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=RQO9CfN_Q9o:GWKH6q8tZuc:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=RQO9CfN_Q9o:GWKH6q8tZuc:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=RQO9CfN_Q9o:GWKH6q8tZuc:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=RQO9CfN_Q9o:GWKH6q8tZuc:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=RQO9CfN_Q9o:GWKH6q8tZuc:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=RQO9CfN_Q9o:GWKH6q8tZuc:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=RQO9CfN_Q9o:GWKH6q8tZuc:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/RQO9CfN_Q9o" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blogs.developerforce.com/isv/2014/04/are-events-in-your-marketing-mix-make-a-connection-and-expand-your-reach.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blogs.developerforce.com/isv/2014/04/are-events-in-your-marketing-mix-make-a-connection-and-expand-your-reach.html</feedburner:origLink></item>
+		<item>
+		<title>Building Beautiful Mobile Apps In Visualforce Using AngularJS And Ionic (Part 1)</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/Mz_CyHEpRa8/building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic-part-1.html</link>
+		<comments>http://blogs.developerforce.com/developer-relations/2014/04/building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic-part-1.html#comments</comments>
+		<pubDate>Mon, 07 Apr 2014 15:54:30 +0000</pubDate>
+		<dc:creator>Raja Rao DV</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://26.59621</guid>
+		<description><![CDATA[<a href="http://blogs.developerforce.com/developer-relations/2014/04/building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic-part-1.html"><img align="left" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396876428/ionic_angular_salesforce1_f2i9sa.png" class="alignleft wp-post-image tfe" alt="" title="" /></a>This is the first part of a multi-part "video" blog  that shows how to build beautiful mobile apps. It has 3 short videos that 1: Introduces AngularJS and Ionic JavaScript Frameworks, 2: Goes over an example Ionic "Single page App" code to show how AngularJS and Ionic actually work and 3. And the 3rd video shows how to port that app to Visualforce. This blog also has pointers to several hand picked AngularJS and Ionic resources to get you going in no time.]]></description>
+				<content:encoded><![CDATA[<p><img src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396876428/ionic_angular_salesforce1_f2i9sa.png" class="alignnone wp-image-60711" width="1387" height="237"><a title="Ionic Framework" href="http://ionicframework.com/" target="_blank">Ionic Framework</a> allows us to build beautiful mobile apps using just JavaScript, HTML5 and CSS. Another cool thing is that it built on top of <a title="http://angularjs.org/" href="http://angularjs.org/" target="_blank">AngularJS</a> &#8211; a popular JavaScript Framework from Google.</p>
+<h1>Multipart Video Blog Series</h1>
+<p><a class="overlay" href="http://res.cloudinary.com/hzxejch6p/image/upload/v1396847190/ionic-part1-agenda_gkiz1d.png"><img class="alignleft size-medium wp-image-60191" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/c_fill,h_187,w_300/v1396847190/ionic-part1-agenda_gkiz1d.png" width="300" height="187" /></a>Personally I like to learn by watching short videos and I thought you might as well. So I have created several short videos that go from quick high-level overview of these technologies to more advanced topics over time. I will be sharing them as part of several consecutive blog posts.<br />
+So here is the first installment:<br />
+&nbsp;&nbsp;&nbsp;</p>
+<h1>1.1 Quick Overview Of AngularJS And Ionic Frameworks [~3 mins]</h1>
+<p>Learn what AngularJS and Ionic Frameworks are and how they can help build beautiful and sophisticated JavaScript Mobile apps  in this short video:</p>
+<p><iframe width="500" height="281" src="http://www.youtube.com/embed/-zCQfZUfvxA?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<h1>1.2 Ionic App Code Overview [~ 9 mins]</h1>
+<p>In this short video, I will go over an example Ionic app and explain how Ionic and AngularJS code actually work. [This is perhaps the shortest intro to AngularJS and Ionic anywhere <img src='http://blogs.developerforce.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  ]</p>
+<p><iframe width="500" height="281" src="http://www.youtube.com/embed/FlDK0ed6H-k?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<h1>1.3 Port Ionic App to Visualforce [6 mins]</h1>
+<p>Here I will discuss how to take an example Ionic app and port it to run as Visualforce pages.</p>
+<p><iframe width="500" height="281" src="http://www.youtube.com/embed/piWILJDw8pY?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<h1>To Be Continued..</h1>
+<p>There are two more videos in this part, but I don&#8217;t want to overwhelm you so I will be posting them in future blogs. In the mean time if you have questions or comments, you can reach me at<strong> <a href="http://twitter.com/rajaraodv" target="_blank">@rajaraodv</a></strong>.</p>
+<p>&nbsp;<br />
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;</p>
+<h1>Handpicked AngularJS and Ionic Resources:</h1>
+<p>Don&#8217;t worry if you are totally new to AngularJS or Ionic. I have handpicked few short videos to get you going in no time.</p>
+<p>1. If you are new to AngularJS framework, check out this video [~20 minutes].</p>
+<p><iframe width="500" height="281" src="http://www.youtube.com/embed/tnXO-i7944M?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>2. If you are new to Ionic framework, check out this video [~23 minutes].</p>
+<p><iframe width="500" height="281" src="http://www.youtube.com/embed/C-UwOWB9Io4?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>3. Ionic also uses <strong>ui-router</strong> library from <a href="http://angular-ui.github.io/">http://angular-ui.github.io/</a> for routing via <strong>$stateProvider</strong>. To learn more about $stateprovider check out [~5 minutes].<br />
+<a href="https://egghead.io/lessons/angularjs-introduction-ui-router"><img class="alignnone wp-image-59731" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/c_scale,w_517/v1396618222/ui-router_z5wqbg.png" width="517" height="360" /></a><br />
+Note: <a title="https://egghead.io/" href="https://egghead.io/" target="_blank">Egghead.io</a> is a GREAT resource for learning AngulaJS, Node.js etc. They literally have <a href="https://egghead.io/technologies/angularjs" target="_blank">100s of</a> super short high quality videos for you to learn from.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=Mz_CyHEpRa8:MRTSJjp1OwM:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=Mz_CyHEpRa8:MRTSJjp1OwM:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=Mz_CyHEpRa8:MRTSJjp1OwM:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=Mz_CyHEpRa8:MRTSJjp1OwM:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=Mz_CyHEpRa8:MRTSJjp1OwM:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=Mz_CyHEpRa8:MRTSJjp1OwM:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=Mz_CyHEpRa8:MRTSJjp1OwM:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/Mz_CyHEpRa8" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blogs.developerforce.com/developer-relations/2014/04/building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic-part-1.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blogs.developerforce.com/developer-relations/2014/04/building-beautiful-mobile-apps-in-visualforce-using-angularjs-and-ionic-part-1.html</feedburner:origLink></item>
+		<item>
+		<title>Adding Salesforce PIN Security To Native And Hybrid Mobile Apps</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/iDpgbEcM-20/adding-salesforce-pin-security-to-native-and-hybrid-mobile-apps.html</link>
+		<comments>http://blogs.developerforce.com/developer-relations/2014/04/adding-salesforce-pin-security-to-native-and-hybrid-mobile-apps.html#comments</comments>
+		<pubDate>Thu, 03 Apr 2014 15:51:59 +0000</pubDate>
+		<dc:creator>Raja Rao DV</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[android]]></category>
+		<category><![CDATA[ios]]></category>
+		<category><![CDATA[mobile app]]></category>
+		<category><![CDATA[mobile sdk]]></category>
+		<category><![CDATA[privacy]]></category>
+		<category><![CDATA[salesforce mobile sdk]]></category>
+		<category><![CDATA[salesforce.com]]></category>
+		<category><![CDATA[Security]]></category>
+		<category><![CDATA[trust]]></category>
+
+		<guid isPermaLink="false">http://26.58911</guid>
+		<description><![CDATA[<a href="http://blogs.developerforce.com/developer-relations/2014/04/adding-salesforce-pin-security-to-native-and-hybrid-mobile-apps.html"><img align="left" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/c_fill,h_136,w_150/v1396484996/verify-PIN-featured-image_hyw1gp.png" class="alignleft wp-post-image tfe" alt="" title="" /></a>Security is perhaps the No.1 feature of Salesforce. Salesforce provides multiple layers of security at every level starting from servers to mobile SDKs. One such security feature is "PIN Security" feature. Enable it and it will force mobile (i.e. both Native or Hybrid SDK) users to set 4 to 8 digit passcode for their app. Once enabled, if the user switches to a different app and comes back after some specified time, the app will ask for the passcode! Sweet, isn't it?
+
+Even cooler part is that it's built-in and with few simple configurations, your users are ready to use it. Let's see how it works.]]></description>
+				<content:encoded><![CDATA[<p><a href="http://res.cloudinary.com/hzxejch6p/image/upload/v1396484996/verify-PIN-featured-image_hyw1gp.png" class="overlay"><img src="http://res.cloudinary.com/hzxejch6p/image/upload/c_fill,h_136,w_150/v1396484996/verify-PIN-featured-image_hyw1gp.png" alt="" width="150" height="136" class="alignleft size-thumbnail wp-image-59181" /></a>Security is perhaps the No.1 feature of Salesforce. Salesforce provides multiple layers of security at every level starting from servers to mobile SDKs. One such security feature is &#8220;PIN Security&#8221; for mobile apps. Enable it and it will force mobile (both Native and Hybrid SDK) users to set 4 to 8 digit passcode for their app. Once enabled, if the user switches to a different app and comes back after some specified time, the app will ask for the passcode! Sweet, isn&#8217;t it?</p>
+<p>Even cooler part is that it&#8217;s built-in and with few simple configurations, your users are ready to use it. Let&#8217;s see how it works.</p>
+<p>&nbsp;</p>
+<h1>Enabling PIN Security</h1>
+<p>It&#8217;s rather simple to enable PIN security. Login as Administrator and open your connected app (under &#8220;Create&#8221;). Then select <strong>PIN Protect</strong> checkbox near the end of the page and save the connected app.<img class="alignnone wp-image-58931" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396480125/PIN-protect_ro1ltv.png" width="739" height="212" /></p>
+<p>&nbsp;</p>
+<h1>Customizing PIN Security</h1>
+<p>Further, an admin can customize PIN&#8217;s length and timeout duration. To do that simply go to: Setup &gt; Connected Apps (<strong>under Manage apps</strong> not under &#8220;Create&#8221;) and edit your Connected app. Then simply set &#8220;Session Timeout&#8221; and &#8220;Pin Length&#8221; to what you want.<br />
+<img class="alignnone wp-image-58961" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396481238/PIN-security_pmxomx.png" width="923" height="379" /><br />
+Note: This setting is under &#8220;Manage apps&#8221; because this is controlled by the admin of the org (typically production org) where the user actually lives. </p>
+<p>&nbsp;</p>
+<h1>How PIN Security Works</h1>
+<p>Below picture shows it all.<br />
+<img class="alignnone wp-image-59061" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396484614/all-3-pin_unvyeo.png" width="1075" height="550" /></p>
+<p>Note: It works exactly the same on iOS Native, Android and Hybrid apps. So as long as you use one of the SDKs, you are good to go.</p>
+<h1>New To Salesforce Mobile Development?</h1>
+<p>Get started here:<br />
+<a href="http://www2.developerforce.com/en/mobile/getting-started">http://www2.developerforce.com/mobile</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=iDpgbEcM-20:YfrkeFZvwoQ:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=iDpgbEcM-20:YfrkeFZvwoQ:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=iDpgbEcM-20:YfrkeFZvwoQ:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=iDpgbEcM-20:YfrkeFZvwoQ:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=iDpgbEcM-20:YfrkeFZvwoQ:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=iDpgbEcM-20:YfrkeFZvwoQ:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=iDpgbEcM-20:YfrkeFZvwoQ:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/iDpgbEcM-20" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blogs.developerforce.com/developer-relations/2014/04/adding-salesforce-pin-security-to-native-and-hybrid-mobile-apps.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blogs.developerforce.com/developer-relations/2014/04/adding-salesforce-pin-security-to-native-and-hybrid-mobile-apps.html</feedburner:origLink></item>
+		<item>
+		<title>Spring ’14 Force.com MVP Nominations Are Open!</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/Fqn47wibp_w/spring-14-force-com-mvp-nominations-are-open-2.html</link>
+		<comments>http://blogs.developerforce.com/developer-relations/2014/04/spring-14-force-com-mvp-nominations-are-open-2.html#comments</comments>
+		<pubDate>Thu, 03 Apr 2014 14:41:35 +0000</pubDate>
+		<dc:creator>April Nassi</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[force.com mvp]]></category>
+
+		<guid isPermaLink="false">http://26.59421</guid>
+		<description><![CDATA[<a href="http://blogs.developerforce.com/developer-relations/2014/04/spring-14-force-com-mvp-nominations-are-open-2.html"><img align="left" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1380644192/fdc-mvp-logo-f_blu_small_esjxhu.png" class="alignleft wp-post-image tfe" alt="" title="" /></a>It's been raining for the past week in San Francisco and the biggest store display you see these days tends to be the one for allergy relief so it's safe to conclude that Spring has Sprung here! And how better to celebrate then to kick off another round of nominations for the Force.com MVP program? Today I'm pleased to officially open the nomination period for the Spring '14 class of Force.com MVPs.]]></description>
+				<content:encoded><![CDATA[<p><img class="wp-image-59361 alignleft" style="margin: 5px" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1380644192/fdc-mvp-logo-f_blu_small_esjxhu.png" width="160" height="114" />It&#8217;s been raining for the past week in San Francisco and the biggest store display you see these days tends to be the one for allergy relief so it&#8217;s safe to conclude that Spring has Sprung here! And how better to celebrate then to kick off another round of nominations for the <a href="http://developer.force.com/mvp">Force.com MVP program</a>? Today I&#8217;m pleased to officially open the nomination period for the Spring &#8217;14 class of Force.com MVPs.</p>
+<p>The Force.com MVP program is designed to recognize those in the developer community who consistently set the standard of community stewardship. These are the developers you&#8217;re always looking for at your <a href="http://events.developerforce.com/dugs?title=page/Force.com_User_Groups">local developer group meeting</a>, or making sure to never miss their blog posts. You see potential Force.com MVPs leading trainings and helping their fellow developers grow their own skills. Perhaps this person is a mentor to you or someone who has unselfishly given their time and energy to help not only you but the entire developer community via the <a href="https://developer.salesforce.com/forums/ForumsCategories">Developer Forums</a> or <a href="http://salesforce.stackexchange.com/">StackExchange</a>.</p>
+<p>To make a nomination simply <a href="http://events.developerforce.com/en/mvp/nomination_form">complete the nomination form</a>. Tell us about your interactions with this person, where we can find them on the internet, and how they have set the standard for the developer community at large. Nominations are open until April 18, 2014. This program is made possible by your feedback so thank you for your time in nominating a developer!</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=Fqn47wibp_w:XGYqCFGOjd0:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=Fqn47wibp_w:XGYqCFGOjd0:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=Fqn47wibp_w:XGYqCFGOjd0:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=Fqn47wibp_w:XGYqCFGOjd0:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=Fqn47wibp_w:XGYqCFGOjd0:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=Fqn47wibp_w:XGYqCFGOjd0:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=Fqn47wibp_w:XGYqCFGOjd0:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/Fqn47wibp_w" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blogs.developerforce.com/developer-relations/2014/04/spring-14-force-com-mvp-nominations-are-open-2.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blogs.developerforce.com/developer-relations/2014/04/spring-14-force-com-mvp-nominations-are-open-2.html</feedburner:origLink></item>
+		<item>
+		<title>3 Ways to Configure Salesforce OAuth Authentication in Native iOS Apps</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/yEmyMOgXumA/3-ways-to-configure-salesforce-oauth-authentication-in-native-ios-apps.html</link>
+		<comments>http://blogs.developerforce.com/developer-relations/2014/04/3-ways-to-configure-salesforce-oauth-authentication-in-native-ios-apps.html#comments</comments>
+		<pubDate>Wed, 02 Apr 2014 18:06:33 +0000</pubDate>
+		<dc:creator>Raja Rao DV</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[authentication]]></category>
+		<category><![CDATA[Communities]]></category>
+		<category><![CDATA[login]]></category>
+		<category><![CDATA[logout]]></category>
+		<category><![CDATA[mobile]]></category>
+		<category><![CDATA[native ios]]></category>
+		<category><![CDATA[native sdk]]></category>
+		<category><![CDATA[oauth]]></category>
+		<category><![CDATA[portal]]></category>
+		<category><![CDATA[salesforce ios sdk]]></category>
+		<category><![CDATA[salesforce mobile]]></category>
+
+		<guid isPermaLink="false">http://26.58171</guid>
+		<description><![CDATA[<a href="http://blogs.developerforce.com/developer-relations/2014/04/3-ways-to-configure-salesforce-oauth-authentication-in-native-ios-apps.html"><img align="left" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396460858/Unknown_ki7xrk.jpg" class="alignleft wp-post-image tfe" alt="" title="" /></a>This video blog shows how to add native iOS Salesforce authentication for 1. a new iOS app, 2. an existing iOS app and 3. an app with Salesforce communities or custom login.  This contains 3 short (two 5 minutes and one 10 minutes long) videos, so you can pick and choose which ever works for you.]]></description>
+				<content:encoded><![CDATA[<p>I<img class="alignleft wp-image-58811" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396460858/Unknown_ki7xrk.jpg" width="120" height="120" />f you are working on a native iOS app that needs to interact with Salesforce data, the first step is to perform OAuth to authenticate the user. Salesforce provides <a href="https://github.com/forcedotcom/SalesforceMobileSDK-iOS-Distribution" target="_blank">native iOS SDK </a>and <a href="https://github.com/forcedotcom/SalesforceMobileSDK-iOS-Package" target="_blank">forceios</a> tool just for this purpose. However, depending on your app&#8217;s requirements you may need to choose one over the other. Secondly, if you are dealing with Salesforce Communities, you will need to do some extra configurations. This blog shows three such scenarios and explains how to configure Salesforce Native SDK for each one of them.</p>
+<h1>Scenarios:</h1>
+<ol>
+<li><span style="line-height: 13px">Brand new iOS app  - You are building a brand new iOS app and users can&#8217;t do anything unless they login to Salesforce. </span></li>
+<li>Existing iOS App &#8211; You already have an iOS app that might be authenticating with Heroku / Facebook, but now you want to add Salesforce authentication.</li>
+<li>Salesforce Communities or custom Facebook login &#8211; This could be brand new or existing app,  but you want to users to use custom login page.</li>
+</ol>
+<p>&nbsp;</p>
+<h1>Brand New iOS App [~5 mins]</h1>
+<p>In this scenario, the recommended way to go is to use <a href="http://www2.developerforce.com/en/mobile/getting-started/ios" target="_blank">forceios tool</a>. This tool automatically creates a sample iOS app that&#8217;s ready to go in 5 mins. The tool also imports all the libraries, dependencies, header search paths and linker flags.  Perhaps the only caveat is that this app assumes that first view is Salesforce login page.</p>
+<p><iframe width="500" height="375" src="http://www.youtube.com/embed/zNw59KEUF24?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<h1>Existing iOS App  [~10 mins]</h1>
+<p>In this scenario you already have an app and want to add Salesforce authentication to some part of your app. Check out the 10 mins video that shows how to manually add Salesforce SDK.</p>
+<p><iframe width="500" height="281" src="http://www.youtube.com/embed/X4jhhmnvjAI?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<h1>Salesforce Communities or Custom Facebook Login  [~3 mins]</h1>
+<p>In this scenario you have a custom login page for your Salesforce community or portal users, and perhaps you have also configured &#8216;Facebook&#8217; login to allow community members to login using Facebook. In this situation, you should first use one of the above two scenarios to add Salesforce authentication, and then you will configure it to use custom login page.</p>
+<p><iframe width="500" height="281" src="http://www.youtube.com/embed/USFPo2u7jpU?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<h1> Bonus &#8211; iOS SDK Webinar [~1 hour]</h1>
+<p>This hour long webinar shows how to use forceios tool and also has our iOS SDK engineer demonstrate doing Salesforce CRUD operations.</p>
+<p><iframe width="500" height="375" src="http://www.youtube.com/embed/f_ZmCG0zMc4?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=yEmyMOgXumA:gx75u0t8anU:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=yEmyMOgXumA:gx75u0t8anU:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=yEmyMOgXumA:gx75u0t8anU:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=yEmyMOgXumA:gx75u0t8anU:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=yEmyMOgXumA:gx75u0t8anU:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=yEmyMOgXumA:gx75u0t8anU:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=yEmyMOgXumA:gx75u0t8anU:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/yEmyMOgXumA" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blogs.developerforce.com/developer-relations/2014/04/3-ways-to-configure-salesforce-oauth-authentication-in-native-ios-apps.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blogs.developerforce.com/developer-relations/2014/04/3-ways-to-configure-salesforce-oauth-authentication-in-native-ios-apps.html</feedburner:origLink></item>
+		<item>
+		<title>Women in Tech: Master Dancer, Masters in Technology, Master Force.com Instructor</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/jr6YHLGp9zY/women-in-tech-master-dancer-masters-in-technology-master-force-com-instructor.html</link>
+		<comments>http://blogs.developerforce.com/developer-relations/2014/04/women-in-tech-master-dancer-masters-in-technology-master-force-com-instructor.html#comments</comments>
+		<pubDate>Wed, 02 Apr 2014 12:51:29 +0000</pubDate>
+		<dc:creator>Mary Scotton</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[admin to dev]]></category>
+		<category><![CDATA[developer community]]></category>
+		<category><![CDATA[force.com]]></category>
+		<category><![CDATA[women in tech]]></category>
+
+		<guid isPermaLink="false">http://26.57581</guid>
+		<description><![CDATA[<a href="http://blogs.developerforce.com/developer-relations/2014/04/women-in-tech-master-dancer-masters-in-technology-master-force-com-instructor.html"><img align="left" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396385375/headshot2013_llc7dx.jpg" class="alignleft wp-post-image tfe" alt="" title="" /></a>Leah McGowen-Hare was introduced to programming at an early age, but grew up wanting to be a dancer, not a programmer, and certainly not a teacher like her parents. Fate had other plans, and she found her niche as a technical trainer. She still dances in her off hours, and she also spends her time volunteering her skills to help others find their niche on the Salesforce1 Platform.]]></description>
+				<content:encoded><![CDATA[<p><img class="alignleft wp-image-58361" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1396385375/headshot2013_llc7dx.jpg" width="136" height="196" />This <a title="WIT series" href="http://blogs.developerforce.com/developer-relations/tag/women-in-tech" target="_blank">series</a> highlights women developers in our community, as a way to raise their visibility and hopefully break down some of the unconscious biases that block the path of women and people of color when it comes to technology jobs. This week, I take a look inside salesforce.com at someone who is sculpting #awesome Force.com developers each week in her training classes. I encourage you to share these stories, and your own, with someone who doesn’t “fit” the stereotype of a programmer. In this small way, we can change the ratio.</p>
+<p><a title="Leah" href="https://twitter.com/LeahBMH" target="_blank">Leah McGowen-Hare</a> was introduced to programming at an early age, but grew up wanting to be a dancer, not a programmer, and certainly not a teacher like her parents. Fate had other plans, and she found her niche as a technical trainer. She still dances in her off hours, and she also spends her time volunteering her skills to help others find their niche on the <a title="S1" href="https://developer.salesforce.com/" target="_blank">Salesforce1 Platform</a>.</p>
+<h2><strong>When did you learn to code? What do you love about it?</strong></h2>
+<p>At 12, I started on a <a title="PET" href="http://en.wikipedia.org/wiki/Commodore_PET" target="_blank">Commodore PET</a> computer coding in BASIC. I created a computer program that printed out big signs on a dot matrix printer. My freshman year in boarding school, everyone came to me to get signs for their parties. I was too young to go to the parties, but everyone came to me.</p>
+<p>I started coding because my father pushed me in that direction. He was not in computers, he was a Professor of Education at a local state college, but he always tried to stay abreast of progressive learning strategies. At that time he was partnering with folks in the technology departments, and they were studying new ways of learning using computer games. Sometimes he would let me loose on the computer. I think I was his study subject without knowing it. I would be playing on the computer for hours: coding, and looking at what was inside that big box. Also, I think it was a way to keep me quiet.</p>
+<p>(<em>Author&#8217;s Note</em>: Reminds me of <a title="Carolina's blog post" href="http://blogs.developerforce.com/developer-relations/2014/03/women-in-tech-keep-trying-and-you-will-become-a-force-com-developer.html" target="_blank">Carolina Ruiz-Medina&#8217;s</a> grandparents&#8230;maybe we should market &#8220;teach your kids to code&#8221; as &#8220;keep your kids quiet&#8221;?)</p>
+<p>Coding draws you in. There is nothing else that matters. You don&#8217;t know the time of day. You don&#8217;t know if it&#8217;s raining or sunny outside. Your world is <em>right there</em>. It&#8217;s very engaging for me. It&#8217;s problem solving. It&#8217;s like figuring your way out of a maze. If you like puzzles or problem solving, you will like programming.</p>
+<h2><strong>How long have you been at salesforce.com? How did you get started?</strong></h2>
+<p>My twins were one at the time, so &#8230; five years. When I started, I knew nothing about cloud computing. I had been doing some Java projects at home, and before the twins I was working at PeopleSoft, so I had been doing on-premise client-server ERP development.</p>
+<p>I learned as much as possible about salesforce.com before my interviews. It was a grueling day, and I was sure I didn&#8217;t get the job, but I did. I spent my first six months with my head down, learning about cloud computing. It was so foreign to me. I was such a hard-core on-premise ERP systems person that I just didn&#8217;t understand it. Especially from a development standpoint, it truly is different coding in the cloud than the old on-premise way.</p>
+<h2><strong>What was your role at PeopleSoft?</strong></h2>
+<p>I started off at PeopleSoft as a developer. I was a developer for years, and while I was pretty good at it, I was too talkative. You literally had an office and you sat in it, and you coded all day. That didn&#8217;t feed my spirit. I used to walk around with tech specs in my hand, but it was just an excuse to go talk to people.</p>
+<p>My manager was sweet about it. She said, &#8220;We&#8217;re not tapping into your natural skills. You have great people skills, don&#8217;t you want to manage?&#8221; I said no. I had done that at Andersen Consulting (now Accenture), and it took me away from the technology, so I didn&#8217;t want to do it again. Then I came across a PeopleSoft University opening for a technical trainer. At first I thought, &#8220;No way &#8211; you guys don&#8217;t even have any women trainers over here, why would I join the boys club?&#8221; But I interviewed, and I just kinda fell into my niche. You&#8217;ve got to be open to the opportunities the universe puts in front of you. You never know. If I had said no to that interview, I would have never known that training was my gift and talent. Who knows what my path would have been?</p>
+<p>Being a technical trainer at PeopleSoft was the best job I&#8217;d ever had: I loved what I was doing, I consistently received the top scores from my classes, and I traveled the world for years (Africa, Brazil, Argentina, anywhere and everywhere teaching PeopleCode). Everything was perfect, it was awesome, my life was complete! Then came the big bear hug from Oracle&#8230;I remember distinctively thinking, &#8220;I&#8217;m so glad I had a job that I loved because I know what it felt like. If I never experience that again, I&#8217;m ok with that because it&#8217;s better to have loved and lost then never to have loved at all.&#8221;</p>
+<p>I can now say that I loved PeopleSoft, but salesforce.com trumps it. It has taken it to another level. Once again, I love what I do, I&#8217;m a top trainer, and I travel the world. It&#8217;s a reminder to always remain open. When you let that energy and passion flow from you, things seem to fall in place. Of course, it&#8217;s not without its own trouble or issues. Yes, all of my coworkers are men.  I am the only woman who is a developer trainer for salesforce.com, in any of our offices, globally. Does that deter me? No. Does it inspire me? Yes. Do I try to recruit more women? Absolutely.</p>
+<h2><strong>How does being the only woman impact your day-to-day?<img class="alignright wp-image-58131" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/c_scale,w_200/v1396320175/WeAllCanDoIt_tacfn2.png" width="200" height="259" /></strong></h2>
+<p>I don&#8217;t see it as a huge issue. My co-workers are men, but my management chain is all women. Also, I work closely with the curriculum development team, which is mostly women. Really, at the end of the day, being a trainer is a one person job: it&#8217;s you traveling, it&#8217;s you walking into the classroom, not a team.</p>
+<p>Walking into a classroom that is all men &#8212; now <em>that</em> is my day-to-day. And that, I&#8217;ve gotten used to. I&#8217;m used to them often being surprised to see me come in. Both because I&#8217;m a woman, and because I am an African-American woman. I don&#8217;t think when people think &#8220;developer, coder&#8221; they think &#8220;African-American woman&#8221;. I love breaking that mold. I love it! Especially at <a title="DF" href="http://www.salesforce.com/dreamforce/DF13/" target="_blank">Dreamforce</a>, when I am in front of hundreds of people who are like &#8220;what?!?&#8221; <em>And</em> I keep them engaged, and make it fun. Yes, coding can be fun! It can even be sexy! It&#8217;s fun when you let yourself be you. The material is dry, so you have to infuse it with life from your experience and your personality.</p>
+<h2><strong>You&#8217;ve met a lot of people in your classes. What is your impression of the Force.com Developer Community overall?</strong></h2>
+<p>Smart. Forward thinking. Innovative thinkers. Open to new things. And, open to learning. They want to learn, they want to take it in. One of my best classes was my first <a title="V2W" href="http://blogs.salesforce.com/company/2013/11/veterans-day.html" target="_blank">Veterans to Work</a> class. I am so glad they are going to be out there representing Salesforce. They were a great, great class.</p>
+<h2><strong>What tips do you share with Force.com newbies?</strong></h2>
+<p>For my coders, coming in from other programming languages, I tell them to understand what can be done with clicks and not code <em>first</em>. Sometimes, programmers think that if things aren&#8217;t cryptic and hard, it&#8217;s not hard-core coding, but you need to understand what can be done with approval processes, workflow, formulas &#8211; those should be your first line of defense. Don&#8217;t code what can be done with clicks. If you do, it&#8217;s harder work: you&#8217;ll be spending time and energy on creating code and more time writing test code on something that&#8217;s already feasible with clicks.</p>
+<p>I had a customer tell me they had a consulting firm code an approval process engine in Apex Code because they weren&#8217;t familiar with Force.com Approvals. That&#8217;s why I also tell my Project Managers and Salesforce Admins, even if they aren&#8217;t coding, to understand what is possible on the platform with clicks, and when you need to jump over to code, so that they aren&#8217;t sold the wrong solution.</p>
+<h2><strong>I&#8217;ve met many Salesforce Admins who are interested in learning to code. What is your advice to them?</strong></h2>
+<p>Most Salesforce Admins get interested in learning to code when they have exhausted the point &amp; click platform. They need to jump over to code and want to be able to do it themselves. My advice is to get empowered with knowledge. Take training! Take <a title="sfdc" href="http://www.salesforce.com/services-training/training_certification/training.jsp" target="_blank">Salesforce University</a> classes, or search and find the tons of free training out there, like the <a title="df13" href="http://www.youtube.com/user/dreamforce" target="_blank">Dreamforce &#8217;13 sessions</a>.</p>
+<p>There is also great content on the <a title="DFC" href="http://developer.force.com/" target="_blank">developer.force.com</a> site, including step-by-step <a title="workbooks" href="http://wiki.developerforce.com/page/Force.com_workbook" target="_blank">workbooks</a>, and a very active community <a title="boards" href="https://developer.salesforce.com/forums/?dc=General_Development" target="_blank">discussion board</a>.</p>
+<p>The Salesforce community is active on Twitter. I recommend using #askforce to ask questions, and following these folks:</p>
+<ul>
+<li><a title="MG" href="https://twitter.com/MikeGerholdt" target="_blank">@MikeGerholdt</a></li>
+<li><a title="BD" href="https://twitter.com/sfdc_nerd" target="_blank">@sfdc_nerd</a></li>
+<li><a title="MF" href="https://twitter.com/michaelforce" target="_blank">@michaelforce</a></li>
+<li><a title="SU" href="https://twitter.com/SalesforceU" target="_blank">@SalesforceU</a><span style="color: #ff0000"><span style="color: #333333"> </span></span></li>
+</ul>
+<p>And finally, be careful because it can be overwhelming. Start small. Look at code that actually works and is doing something that you want to do. Start there, and then tweak it. Start with a small simple trigger, and learn how to write test code. If you can&#8217;t write test code, you can&#8217;t deploy your code!</p>
+<p>(<em>Author&#8217;s Note</em>: check out this simple <a title="first trigger" href="http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_qs_HelloWorld.htm" target="_blank">Writing Your First Apex Class and Trigger</a> example in the developer docs.)</p>
+<h2><strong>Tell me about your life outside of Salesforce.</strong></h2>
+<p>The <a title="111" href="http://www.salesforce.com/company/foundation/" target="_blank">1:1:1 philanthropic model</a> is a key part of everyone&#8217;s <a title="V2MOM" href="http://blogs.salesforce.com/company/2013/04/how-to-create-alignment-within-your-company.html" target="_blank">V2MOM</a> at salesforce.com. Many people are interested in eliminating their carbon footprint. I want to reduce the digital divide. We keep moving forward with technology, but never look back at the people who are left behind. There is a huge divide for people of color. You don&#8217;t have to go to another country to find people without access to the internet. You can go to a school in East Oakland. <a title="BGC" href="http://www.blackgirlscode.com/" target="_blank">Black Girls Code</a>, <a title="BMA" href="http://bmaoakland.startupweekend.org/" target="_blank">Black Male Achievement Oakland</a>, and the <a title="HGP" href="http://www.hiddengeniusproject.org/" target="_blank">Hidden Genius Project</a> &#8211; organizations like these are bridging the digital divide. With my volunteer time, I want to figure out how to use my skills to help further their cause.</p>
+<p>My first love is dancing. In a past life, I auditioned to be a &#8220;Fly Girl&#8221; on In Living Color, and that didn&#8217;t pan out, but I still dance. I thought that a good way to bond with my 14-year-old son, Dez, would be hip-hop classes, but I have to say it wasn&#8217;t until I took him to a hackathon and he out-coded me that we had a strong bonding moment. (Author&#8217;s note: Leah&#8217;s son participated in the Startup Weekend Oakland Black Male Achievement hackathon, on the same team as <a title="George" href="m.youtube.com/watch?feature=youtu.be&amp;v=5tnXsnAaEF4" target="_blank">George</a>. I recap that event <a title="recap" href="http://blogs.developerforce.com/developer-relations/2014/02/startup-weekend-oakland-black-male-achievement-recap.html" target="_blank">here</a>.)</p>
+<p>Dez will still dance with me sometimes, and recently he and I volunteered to teach a hip-hop dance class at <a title="ARC" href="http://www.thearc.org/" target="_blank">The Arc</a>. The Arc is a non-profit service and advocacy organization for adults with autism, Down syndrome, cerebral palsy, intellectual and developmental disabilities and their families living in San Francisco and San Mateo counties. Salesforce.com employs folks from The Arc to work in all the San Francisco and San Mateo offices, staffing the kitchens and making coffee. It was a great class!</p>
+<p><img class="aligncenter wp-image-58241" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/c_scale,w_350/v1396377919/Arc_crlkd1.png" width="350" height="278" /></p>
+<p><span style="font-size: 2em">Author&#8217;s Note</span></p>
+<p>Want to learn more about Leah, Salesforce University, and the other organizations where she volunteers her time? Check out her recent <a title="BCA" href="http://buttonclickadmin.com/leah-mcgowen-hare-changing-admin-demographic/" target="_blank">ButtonClick Admin podcast</a>.</p>
+<p>Want to learn Apex Code but don&#8217;t have a programming background? Learn to code in <a title="class" href="http://www.salesforce.com/services-training/training_certification/find-a-class.jsp?d=70130000000EzNV&amp;internal=true&amp;utm_content=bufferfe443&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer#cursor=0&amp;name=ADM-231&amp;location=&amp;daterange=" target="_blank">ADM231: Introduction to Object-Oriented Programming with Force.com Code</a>. Leah is teaching this course in New York City, April 21-25, 2014.</p>
+<p>Want to get news and info about about Salesforce Developers, Salesforce Admins, and Women in Tech? Follow me on Twitter <a title="me" href="https://twitter.com/rockchick322004" target="_blank">@rockchick322004</a>.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=jr6YHLGp9zY:72MOaEqNd68:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=jr6YHLGp9zY:72MOaEqNd68:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=jr6YHLGp9zY:72MOaEqNd68:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=jr6YHLGp9zY:72MOaEqNd68:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=jr6YHLGp9zY:72MOaEqNd68:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=jr6YHLGp9zY:72MOaEqNd68:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=jr6YHLGp9zY:72MOaEqNd68:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/jr6YHLGp9zY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blogs.developerforce.com/developer-relations/2014/04/women-in-tech-master-dancer-masters-in-technology-master-force-com-instructor.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blogs.developerforce.com/developer-relations/2014/04/women-in-tech-master-dancer-masters-in-technology-master-force-com-instructor.html</feedburner:origLink></item>
+		<item>
+		<title>From Idea to Product in 5 Months: Hackathon – The Spark That Lit The Fire</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/V5LUAq7S9Ts/from-idea-to-product-in-5-months-hackathon-the-spark-that-lit-the-fire.html</link>
+		<comments>http://blogs.developerforce.com/isv/2014/03/from-idea-to-product-in-5-months-hackathon-the-spark-that-lit-the-fire.html#comments</comments>
+		<pubDate>Mon, 31 Mar 2014 20:08:26 +0000</pubDate>
+		<dc:creator>Kris Moyse</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[community]]></category>
+
+		<guid isPermaLink="false">http://30.12651</guid>
+		<description><![CDATA[<a href="http://blogs.developerforce.com/isv/2014/03/from-idea-to-product-in-5-months-hackathon-the-spark-that-lit-the-fire.html"><img align="left" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/c_scale,w_598/v1395875763/Untitled_mmmbhi.png" class="alignleft wp-post-image tfe" alt="" title="" /></a>The Dreamforce 2013 Hackathon was Challenging!  A team of two + new technologies + a full schedule of meetings and presentations = the best of times + the worst of times.  Our goal for the Hackathon was to develop a proof-of-concept mobile customer-engagement solution using newly-released iBeacon proximity sensing technology.  Fast forward 5 months...]]></description>
+				<content:encoded><![CDATA[<p><em>Kris Moyse is a distinguished Salesforce1 developer with several apps on the AppExchange.  He is the co-founder of S. P. Keasey Trading Co. and founding member of the NYC Partner User Group who loves a hard fought game of ping pong.</em></p>
+<p><b>Dreamforce Hackathon to Product</b></p>
+<p><i>The Dreamforce 2013 Hackathon was Challenging!  A team of two + new technologies + a full schedule of meetings and presentations = the best of times + the worst of times.</i></p>
+<p>Our goal for the Hackathon was to develop a proof-of-concept mobile customer-engagement solution using newly-released iBeacon proximity sensing technology.</p>
+<p>Fast forward 5 months, and we now have on-board retail industry and digital marketing expertise and have developed a full end-to-end proximity marketing solution called <a href="http://www.proximityinsight.com/"><b>Proximity Insight</b></a>.  The solution allows Retailers to get closer to their end customers using engaging mobile apps, linked via iBeacon proximity-sensing technology to their Salesforce.com environment.</p>
+<p>Proximity marketing is an exciting new business initiative that is shaping up to be huge in 2014; the ability to deliver rule-based, individually targeted marketing messages via a mobile application is potentially very powerful.</p>
+<p><b>The Hackathon is Announced</b></p>
+<p>Dreamforce 2013 was different for me!  Firstly, I was representing my own company rather than someone else’s.  This raised the stakes so I wanted everything to be planned and prepared beforehand. I was presenting in 5 sessions and had meetings lined up with Salesforce staff, customers and prospects.  My technical ‘partner in crime’ (@laceysnr ) was also heavily committed at the conference, presenting at 4 sessions and involved in many of the meetings.</p>
+<p>Three weeks before the conference, Salesforce announced the Hackathon. Being young and full of confidence (some might call that stupid), we wanted to have a crack! The prize money was a big incentive but we knew it would take some work and a lot of our time.  We could do some preparation beforehand but to complicate things somewhat, we were literally half a world apart – me in NYC and @laceysnr in Melbourne, Australia.</p>
+<p>Our plan was bold … we would use brand new iBeacon technology to link a mobile app via a custom Force.com app to salesforce.com, creating a CRM for businesses that currently have little or no customer information.</p>
+<p>In the end, we decided to go for it!</p>
+<p><i>So how did it pan out….</i></p>
+<p>It started with a bang; we spun-up a new project on Heroku and a new Salesforce Dev org and we were off and running.</p>
+<p>We committed early to building on Cordova but the iBeacons only had ties to Native iOS and Android.  First hurdle … is that even possible?  We discussed our options with the hardware vendor who told us “I don&#8217;t have any idea how you are going to get data from that service into Cordova. It seems like that is the trickier part.”  OK …. push-on assuming we could deliver.  With the hardware in NYC and technology genius in Melbourne, Australia this turned out to be a bad decision!</p>
+<p>The majority of the solution was to be built when we joined forces in SFO.  We arrived together the Wednesday before Dreamforce, found an apartment away from the craziness around Moscone and hacked long and hard.</p>
+<p>The next four days can be summarized by a Lacey quote &#8211; “It is sad when I get 5 hours sleep and classify it as a sleep-in.”</p>
+<div style="text-align:right;"><a style="color:#aaa;font-size:9px" href="http://www.clickonf5.org/" title="IFRAME Embed for Youtube Free WordPress Plugin" target="_blank">IFRAME Embed for Youtube</a></div>
+<p>&nbsp;</p>
+<p>There is still a lot to do and not much time left.</p>
+<p><b>Dreamforce Begins</b></p>
+<p>The first day of Dreamforce was our busiest with both of our calendars 100% full.  The image below shows us presenting to the Mobile Theater.</p>
+<p><img class="wp-image-12711 alignleft" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/c_scale,w_598/v1395875763/Untitled_mmmbhi.png" width="598" height="449" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>By the end of the day we were very tired but knew we had to keep working on the Hackathon project.  We went home and worked until 2:30am, only to wake at 7:30am.  The next few days were much the same with full day commitments at the conference and working until very late on code.</p>
+<p>Tuesday was spent walking around San Francisco with a GoPro on my head capturing footage for the demo day. After spending the night putting the video together, I realized it is not that easy to create a nice demo video … where’s a real video producer when you need one?!</p>
+<div style="text-align:right;"><a style="color:#aaa;font-size:9px" href="http://www.clickonf5.org/" title="IFRAME Embed for Youtube Free WordPress Plugin" target="_blank">IFRAME Embed for Youtube</a></div>
+<p>&nbsp;</p>
+<p>The day of the Hackathon arrived but we had totally forgotten to check the app ‘sign-up’ screen … fatal error! We were emotionally broken, we honestly thought all our work had been for naught. This was by far our lowest moment.</p>
+<p>I tried to console Lacey with … “Come on buddy, it is not the end of the world if we don’t get anything in”. We hugged it out and pushed on with the thought that the whole thing may be futile with only 4 hours to go. All of a sudden, parts of the system started working again.  It was not long before the app was back!  We finally submitted it with 5 minutes to spare.  Feeling good about our idea and use of the platform, we knew didn’t have the polish to make the finals, but thought we might be a ‘dark horse’ … unfortunately we weren’t.</p>
+<p>Thanks to others who shared our hope <img src='http://blogs.developerforce.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />   Jim Raynor comment on Hackathon blog</p>
+<p><i>&#8220;If I were to pick the top two, it would be Matt Lacey&#8217;s app and Chatter complete. Can&#8217;t believe those folks missed out.&#8221;</i></p>
+<p>Our Hackathon entry was very raw but it was an amazing proof-of-concept. Being the first company to tie iBeacons into a Cordova Android app felt pretty good.</p>
+<p><b>After Dreamforce</b></p>
+<p>After regrouping from the craziness of Dreamforce, we did a lot of research. It was clear that the idea was something new and had the potential to build on Marc Benioff’s idea of making the ‘Internet of Customers’. We gathered a team of industry experts and started building. Five months later we launched an end-to-end retail clienteling app called <strong><a href="http://www.proximityinsight.com/">Proximity Insight</a></strong>, which ties Salesforce1 to the ’Internet of Customers’ using iBeacons and Heroku.</p>
+<p>What a ride, what a platform.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=V5LUAq7S9Ts:V4mh4WQ_zK0:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=V5LUAq7S9Ts:V4mh4WQ_zK0:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=V5LUAq7S9Ts:V4mh4WQ_zK0:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=V5LUAq7S9Ts:V4mh4WQ_zK0:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=V5LUAq7S9Ts:V4mh4WQ_zK0:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=V5LUAq7S9Ts:V4mh4WQ_zK0:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=V5LUAq7S9Ts:V4mh4WQ_zK0:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/V5LUAq7S9Ts" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blogs.developerforce.com/isv/2014/03/from-idea-to-product-in-5-months-hackathon-the-spark-that-lit-the-fire.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blogs.developerforce.com/isv/2014/03/from-idea-to-product-in-5-months-hackathon-the-spark-that-lit-the-fire.html</feedburner:origLink></item>
+	</channel>
+</rss>
