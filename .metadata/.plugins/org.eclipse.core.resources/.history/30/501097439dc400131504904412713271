@@ -16,19 +16,5 @@
         <members>ActiveActivitiesController</members>
         <name>ApexClass</name>
     </types>
-    <types>
-        <members>AccountAddressPrePopulate</members>
-        <members>AccountAssignmentContactPage</members>
-        <members>AccountAssignmentErrorPage</members>
-        <members>AccountContactRoleSync</members>
-        <members>AccountCreationDispatch</members>
-        <members>AccountEditTest</members>
-        <members>AccountHierarchy</members>
-        <members>AccountHierarchyPage</members>
-        <members>AccountTeamRolesPicklistView</members>
-        <members>AccountToPermissionPage</members>
-        <members>ActiveErrorsPage</members>
-        <name>ApexPage</name>
-    </types>
     <version>28.0</version>
 </Package>

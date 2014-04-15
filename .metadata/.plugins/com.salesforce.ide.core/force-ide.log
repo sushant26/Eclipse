@@ -87,3 +87,5 @@ ERROR [2014-04-15 18:15:52,958] (ProjectPackageList.java:generateComponents:473)
  WARN [2014-04-15 18:18:39,240] (ConnectionFactory.java:clearCache:212) - Clearing the following cached connections
  WARN [2014-04-15 18:18:39,338] (DescribeObjectRegistry.java:clearCache:657) - Clearing cached describes
  WARN [2014-04-15 18:18:39,339] (MetadataFactory.java:clearCache:123) - Clearing the following cached metadata stubs
+ WARN [2014-04-15 18:25:18,104] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'ExternalDataSource': Unable to get bean for id 'ExternalDataSource'
+ WARN [2014-04-15 18:25:18,171] (ComponentFactory.java:getComponentBean:1145) - Unable to get component for id 'SamlSsoConfig': Unable to get bean for id 'SamlSsoConfig'
