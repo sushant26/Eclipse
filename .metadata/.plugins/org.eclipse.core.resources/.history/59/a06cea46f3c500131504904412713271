@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ACRDetails</members>
+        <members>ACRRoles</members>
+        <members>ACRRolesSCTestClass</members>
+        <members>ACR_RestService</members>
+        <members>Abonnementers</members>
+        <members>AccountAssignmentContactController</members>
+        <members>AccountAssignmentContactControllerSCTest</members>
+        <members>AccountAssignmentContactControllerTest1</members>
+        <members>AccountContactRoleWrapper</members>
+        <members>AccountStructure</members>
+        <members>AccountTeamRolesPicklistController</members>
+        <members>AccountTreeStructureSCTestClass</members>
+        <members>ActiveActivitiesController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>AccountAddressPrePopulate</members>
+        <members>AccountAssignmentContactPage</members>
+        <members>AccountAssignmentErrorPage</members>
+        <members>AccountContactRoleSync</members>
+        <members>AccountCreationDispatch</members>
+        <members>AccountEditTest</members>
+        <members>AccountHierarchy</members>
+        <members>AccountHierarchyPage</members>
+        <members>AccountTeamRolesPicklistView</members>
+        <members>AccountToPermissionPage</members>
+        <members>ActiveErrorsPage</members>
+        <members>CaseCloseByCustomer</members>
+        <members>CaseHTMLEmailPage</members>
+        <members>CaseNext2CloseNext</members>
+        <members>CaseNextCase2</members>
+        <members>CaseNextCase2Console</members>
+        <members>CaseNextCaseConsole</members>
+        <name>ApexPage</name>
+    </types>
+    <version>28.0</version>
+</Package>
+
